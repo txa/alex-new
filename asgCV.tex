@@ -1,6 +1,7 @@
 \documentclass[line]{res}
+\usepackage{graphicx,wrapfig}
 \usepackage{hyperref}
-\hypersetup{colorlinks,urlcolor=blue}
+\hypersetup{colorlinks,urlcolor=black}
 
 \newenvironment{list1}{
   \begin{list}{\ding{113}}{%
@@ -23,14 +24,118 @@
 
 \section{\sc Contact Details}
 \begin{ncolumn}{2}
-2A Abbey Road,  & \\
-Beeston,        & {\it Phone:}  +44 (0)1159 229164\\
-Nottingham,     & {\it Mobile:} +44 (0)7743 855930\\
-NG9 2QF,        & {\it Email:} \texttt{alexander.s.green@gmail.com}\\
-UK              & \\
+39 Weston Road, & {\it Phone:}  +44 (0)1275 392144 
+   \hspace{3mm} {\it Mobile:}  +44 (0)7743 855930 \\
+Long Ashton, Bristol, BS41 9AA & 
+   {\it Email:}~\texttt{alexander.s.green@gmail.com} \\
 \end{ncolumn}
 
-\vspace{-3mm}
+\vspace{-4mm}
+\section{\sc Employment History}
+\begin{format}
+\title{l}\employer{r}\\
+\dates{l}\location{r}\\
+\body\\
+\end{format}
+
+\employer{Department of Mathematics and Statistics}
+\location{Dalhousie University, Halifax, NS, Canada}
+\title{Postdoctoral Fellow}
+\dates{November 2011 - August 2013}
+\begin{position}
+\vspace{-4mm}
+\begin{list2}
+\item I have worked on developing Quipper, a scalable quantum
+  programming language, embedded in the functional language Haskell.
+\url{http://www.mathstat.dal.ca/~selinger/quipper/}
+\item We have used Quipper to implement seven complex quantum
+  algorithms from the literature.
+\item The project was funded through IARPA's Quantum Computer 
+ Science Program (QCS).
+\item I have attended QCS program workshops, and presented 
+  our work at Logic and interactions 2012, at the CIRM, in 
+  Marseille, France.
+\item We have had two papers published relating to Quipper, one of
+  which I presented at Reversible Computation 2013 in
+  Victoria, British Columbia, Canada.
+\end{list2}
+\end{position}
+
+\employer{Nexor Ltd.}\location{Nottingham, UK}
+\title{Graduate Software Engineer}
+\dates{November 2010 - November 2011}
+\begin{position}
+\vspace{-4mm}
+\begin{list2}
+\item Nexor connects, transforms and protects sensitive information to
+  ensure trusted access and secure interoperability for defence and
+  government agencies. 
+\item My role mainly involved programming using the language C++,  and
+  as such, I attended a C++ training course. This included usage of
+  some of the up and coming features of C++0x.
+\item I also used SQL and wrote code for use in the SAS
+  Business Analytics suite of software, as well as shell scripting for
+  bash.
+\item I was encouraged with my participation in the Intellect
+  Young Professionals Network, and have been in schools as a Cyber
+  Champion for the UK Safer Internet Centre's Safer Internet Day.
+\end{list2}
+\end{position}
+
+\employer{School of Computer Science} 
+\location{University of Nottingham, UK}
+\title{Lecturer for G53NSC and G54NSC}
+\dates{January 2010 - July 2010}
+\begin{position}
+\vspace{-4mm}
+\begin{list2}
+\item These were 3rd year undergraduate, and masters level 
+  modules on Non-Standard Computation, introducing Quantum
+  Computation to students with a Computer Science background.
+\item I prepared all the course material, including lecture slides and
+  the portfolio project material, which made use of Haskell, and the 
+  Quantum IO Monad.
+\item I graded research papers written by the students on topics
+  in the area of Quantum Computation.
+\end{list2}
+\end{position}
+
+\employer{working for Dr Li Bai} \location{University of Nottingham, UK}
+\title{Summer Research Position}
+\dates{June 2005 - August 2005}
+\begin{position}
+\vspace{-4mm}
+\begin{list2}
+\item I researched the area of GPS navigation to aid in an Augmented
+  Reality project.
+\item The work included using relatively large geographic data sets,
+  as well as looking into cloud computation, and distributed parallel
+  systems.
+\end{list2}
+\end{position}
+
+\vspace{-4mm}
+\section{\sc Skills and Experience}
+\begin{list2}
+\item Extensive programming experience with the functional programming
+  language Haskell.
+\item Industry experience with the programming language C++.
+\item Presenting my own work to both specialist and general computer
+  science audiences.
+\item Lecturing to computer science undergraduate and masters students
+  on quantum computation. 
+\item Leading labs and tutorials for undergraduate courses on computer
+  systems architecture, mathematics for computer scientists, and
+  functional programming in Haskell.
+\item Programming with the dependently typed programming language
+  Agda, and other programming languages including Java, Scala, OCaml, 
+  F\#, and PHP.
+\item I have passed the online Coursera modules: Introduction to
+  Finance, and Functional Programming Principles in Scala.
+\item Document preparation using office suites and LaTeX.
+\end{list2}
+
+\vspace{-4mm}
 \section{\sc Education}
 \begin{format}
 \title{l}\employer{r}\\
@@ -43,54 +148,57 @@ UK              & \\
 \dates{September 2005 - July 2010}
 \begin{position}
 Thesis title: 
-{\em Towards a formally verified functional quantum programming language}\\
-Thesis online at \url{http://www.cs.nott.ac.uk/~asg/pdfs/thesis.pdf}\\
+{\em Towards a formally verified functional quantum programming
+  language}\\
+Thesis on-line at
+ \url{http://www.cs.nott.ac.uk/~asg/pdfs/thesis.pdf}\\
 \vspace{-4mm}
 
 \begin{list2}
-\item My PhD studies focussed on developing the Quantum IO Monad, a monadic interface to quantum computation. 
-\item I also studied advanced functional programming techniques, type theory, including dependent types, and category theory.
-\item I have published a peer-reviewed paper as well as a chapter in the book \emph{Semantic Techniques in Quantum Computation}. 
-\item I have presented my work at international conferences.
+\item My PhD studies focused on developing the Quantum IO Monad, a
+  monadic interface to quantum computation, under the supervision of
+  Thorsten Altenkirch. 
+\url{http://hackage.haskell.org/package/QIO}
+\item I also studied advanced functional programming techniques, and
+  type theory, including dependent types. As well as attending courses
+  at the Midlands Graduate School.
+\item I have published a peer-reviewed paper as well as a chapter in
+  the book \emph{Semantic Techniques in Quantum Computation}. 
+\item I have presented my work at international conferences, including
+  BCTCS 2006 and 2007, QPL 2006, QNET workshops 2007; 2008; and 2009,
+  QICS workshop 2008, and TFP 2008.
+\item I received funding from the EPSRC Network on Semantics of
+  Quantum Computation, and the Foundational Structures in Quantum
+  Information and Computation STREP grant. 
 \end{list2}
 \end{position}
 
+\vspace{-2mm}
+\employer{University of Nottingham, UK} \location{}
 \title{\bf{BSc (Hons) Upper Second Class in Computer Science}}
 \dates{September 2001 - July 2005}
 \begin{position}
 \vspace{-4mm}
 \begin{list2}
-\item Obtained high marks in modules involving mathematics, functional programming, and formal verification.
+\item I obtained high marks in modules involving mathematics,
+  functional programming, and formal verification. 
 \end{list2}
 \end{position}
 
-\vspace{-3mm}
-\section{\sc Skills and Experience}
-
-\begin{list2}
-\item Presenting my own work to both specialist and general computer science audiences.
-\item Lecturing to computer science undergraduate and masters students on quantum computation.
-\item Extensive programming expericence with the functional programming language Haskell.
-\item Programming with the dependently typed programming language Agda.
-\item Programming with many popular programming languages including Java, C++, and PHP.
-\item Document preparation using office suites and LaTeX.
-\end{list2}
-
-\vspace{-3mm}
-\section{\sc Positions of Responsibility}
-\begin{list2}
-\item Lecturing to computer science undergraduate and masters students on quantum computation.
-\item Leading labs and tutorials for undergraduate courses on computer systems architecture, and mathematics for computer scientists.
-\end{list2}
-
-\vspace{-3mm}
+\vspace{-4mm}
 \section{\sc Publications}
 \begin{list2}
-\item From Reversible to Irreversible Computations 
-\emph{Alexander S. Green and Thorsten Altenkirch}
-Electronic Notes in Theoretical Computer Science, Volume 210, July 2008
-\emph{Proceedings of the 4th International Workshop on Quantum Programming Languages (QPL 2006)}
-\url{http://www.cs.nott.ac.uk/~asg/pdfs/qpl06.pdf}
+\item An Introduction to Quantum Programming in Quipper
+\emph{Alexander S. Green, Peter LeFanu Lumsdaine, Neil J. Ross, 
+ Peter Selinger and Beno\^{i}t Valiron}
+To appear in the proceedings of the 5th Conference on Reversible Computation, July 2013.
+\url{http://arxiv.org/abs/1304.5485}
+
+\item Quipper: A Scalable Quantum Programming Language
+\emph{Alexander S. Green, Peter LeFanu Lumsdaine, Neil J. Ross, 
+ Peter Selinger and Beno\^{i}t Valiron}
+To appear in the proceedings of the 34th annual ACM SIGPLAN conference on Programming Language Design and Implementation, June 2013.
+\url{http://arxiv.org/abs/1304.3390}
 
 \item The Quantum IO Monad
 \emph{Thorsten Altenkirch and Alexander S. Green}
@@ -100,7 +208,33 @@ Cambridge University Press, 2010
 \emph{ISBN-13: 9780521513746}
 \url{http://www.cs.nott.ac.uk/~asg/pdfs/chapter.pdf}
 
+\item From Reversible to Irreversible Computations 
+\emph{Alexander S. Green and Thorsten Altenkirch}
+Electronic Notes in Theoretical Computer Science, Volume 210, July
+2008
+\emph{Proceedings of the 4th International Workshop on Quantum
+  Programming Languages (QPL 2006)} 
+\url{http://www.cs.nott.ac.uk/~asg/pdfs/qpl06.pdf}
 \end{list2}
+
+\vspace{-4mm}
+\section{\sc Personal Information}
+I have always had a keen interest in the subjects of Computer Science
+and Mathematics, which helped guide the direction of my studies. For
+my PhD I studied a lot of the Physics involved in quantum 
+computation, and used my skills as a functional programmer to develop
+the Quantum IO Monad. I enjoyed a year working as a
+programmer with Nexor, before making the decision to move to Canada
+for a Postdoctoral fellowship at Dalhousie University. This has
+allowed me to once again use my skills in functional programming to
+help develop Quipper. I have also been able to participate in two of my
+other main interests: Rugby Union, and Skiing. Any other spare time I
+have is often used to program, including toy Android Apps, 
+editing GPS logs, and learning new languages.
+
+\vspace{-4mm}
+\section{\sc References}
+References are available upon request.
 
 \end{resume}
 \end{document}
