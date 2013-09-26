@@ -18,8 +18,13 @@
 \input{prelude.tex}
 
 
+<<<<<<< HEAD
 \title{Quantum Types for Quantum Programs:\\
  \Large Towards a Framework for Certified Quantum Information Processing
+=======
+\title{Type Theory Meets Quantum Computing:\\
+ \Large A Framework for Certified Quantum Information Processing
+>>>>>>> 5e1ed73e5885dfbccbd49ca13009601196a324fb
 % \\
 % \LARGE (Case for Support)
 }
@@ -41,7 +46,10 @@ already used to provide a previously unknown level of security
 computer science and related disciplines are facing the challenge of
 developing quantum algorithms \citemain{cacm} and protocols \textbf{and}
 providing evidence that their quantum software performs as
-specified. With the Quantum IO (QIO) monad \citetrack{txa:qio,asg:thesis} we have
+specified. With the Quantum IO (QIO) monad
+\citetrack{txa:qio,asg:thesis}, and more recently with the quantum
+programming language Quipper \citetrack{quipper-pldi,quipper-rc},
+which built upon many of the ideas presented in QIO, the authors have
 presented a framework for the development of quantum software within
 the functional programming language Haskell.
 \txa{Talk about Quipper}
@@ -50,9 +58,10 @@ Programming is ideally suited to meet the challenge of quantum
 computing due to its ability to model
 non-standard effects. However, some aspects of Quantum Information Processing,
 in particular preservation of reversibility, cannot be modelled satisfactorily
-within Haskell's conventional type system. In his PhD work, Green showed
-that this issue can be addressed by moving to a more expressive type
-system, i.e. the dependently typed programming language Agda \citemain{agda}.
+within Haskell's conventional type system. In his PhD work
+\citetrack{asg:thesis}, Green shows that this issue can be addressed
+by moving to a more expressive type system, i.e. the dependently typed
+programming language Agda \citemain{agda}. 
 
 This is only the first glimpse of the role dependent types could play
 for Quantum Information Processing --- there is much more to come!
@@ -220,23 +229,33 @@ undergraduate level, masters level, and to research students
 
 \subsection*{Alexander S. Green}
 Alexander S. Green will be the researcher working full-time on the
-project. He has recently, and successfully defended his PhD thesis,
-\emph{Towards a formally verified functional quantum programming
-language} \citetrack{asg:thesis}, under Thorsten Altenkirch. His work has
-focused specifically on defining the first approximations of QIO, in
-both Haskell and Agda. 
-
-Green has presented his work at BCTCS 2006
+project. His PhD thesis, \emph{Towards a formally verified functional
+  quantum programming language} \citetrack{asg:thesis}, focused
+specifically on defining the first approximations of QIO, in both
+Haskell and Agda. Green's PhD was written under the supervision of
+Thorsten Altenkirch, and he presented his work at BCTCS 2006
 and 2007, QPL 2006, QNET workshops 2007; 2008; and 2009, QICS workshop
 2008, TFP 2008, and FitA May 2009. His paper, \emph{From reversible to
 irreversible computations} \citetrack{txa:qpl06}, appeared in the
-proceedings of QPL 2006, and he has co-authored a chapter on \emph{The
+proceedings of QPL 2006, and he co-authored a chapter on \emph{The
 Quantum IO Monad}, which appears in the book \emph{Semantic Techniques
-in Quantum Computation} \citetrack{txa:qio}. He has also lectured
-third year undergraduate level and masters level courses on quantum
-computation 
-% in the School of Computer Science, at The University of
-% Nottingham.% \citetrack{g53nsc:g54nsc}.
+in Quantum Computation} \citetrack{txa:qio}. Green also lectured third
+year undergraduate level and masters level courses on quantum
+computation in the School of Computer Science, at The University of
+Nottingham. 
+
+Since completing his PhD, Green has held a postdoctoral research
+fellowship position at Dalhousie University, in Halifax, Nova Scotia,
+Canada. His work there, as part of the QCS project, focused on
+developing Quipper, a scalable quantum programming language. He
+co-authored two papers on Quipper: \emph{Quipper: A Scalable Quantum
+  Programming Language} \citetrack{quipper-pldi}, which appeared
+in the proceedings of PLDI 2013, and \emph{An Introduction to Quantum
+  Programming in Quipper} \citetrack{quipper-rc}, which appeared in
+the proceedings of RC2013. As well as attending many of the QCS
+project workshop meetings, Green presented the work on Quipper at
+RC2013.
+
 
 \subsection*{Nottingham - host organisation}
 
