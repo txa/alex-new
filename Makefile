@@ -4,7 +4,7 @@ all : all.pdf
 all.pdf : proposal.pdf asgCV.pdf timeplan.pdf impact.pdf justification.pdf all.tex
 	pdflatex all.tex
 
-proposal.pdf : proposal.tex proposal.bib
+proposal.pdf : proposal.tex proposal.bib teleport.eps
 	latex proposal.tex
 	bibtex track
 	bibtex main

@@ -3,6 +3,7 @@
 \usepackage{pstcol}
 \usepackage{pst-text}
 \usepackage{color}
+\usepackage{graphicx}
 
 \usepackage{multibib}
 \newcites{track}{Publications}
@@ -18,13 +19,9 @@
 \input{prelude.tex}
 
 
-<<<<<<< HEAD
+
 \title{Quantum Types for Quantum Programs:\\
  \Large Towards a Framework for Certified Quantum Information Processing
-=======
-\title{Type Theory Meets Quantum Computing:\\
- \Large A Framework for Certified Quantum Information Processing
->>>>>>> 5e1ed73e5885dfbccbd49ca13009601196a324fb
 % \\
 % \LARGE (Case for Support)
 }
@@ -46,7 +43,9 @@ already used to provide a previously unknown level of security
 computer science and related disciplines are facing the challenge of
 developing quantum algorithms \citemain{cacm} and protocols \textbf{and}
 providing evidence that their quantum software performs as
-specified. With the Quantum IO (QIO) monad
+specified. 
+
+With the Quantum IO (QIO) monad
 \citetrack{txa:qio,asg:thesis}, and more recently with the quantum
 programming language Quipper \citetrack{quipper-pldi,quipper-rc},
 which built upon many of the ideas presented in QIO, the authors have
@@ -377,11 +376,15 @@ over a 36 hour period at 1 Mbit/s.
   such as QPL \citemain{qpl}, inspired by flowcharts, and QML
   \citetrack{txa:qml,jjgthesis} a first order functional quantum
   programming language. This languages offer specific constructs which
-  make it easier to express quatum algorithms on a high level.
-  Quantum process calculi \citemain{upro} have been proposed to capture
-  the nature of concurrent and communicating quantum systems.  Recent
-  surveys on the state of the art for quantum programming languages
-  can also be found \citemain{RudigerSurvey,GaySurvey}.
+  make it easier to express quatum algorithms on a high
+  level. Recently, Quipper \citetrack{quipper-pldi,quipper-rc} has
+  been released as a scalable quantum programming language, capable of
+  implementing large quantum algorithms producing circuits with over
+  30 trillion gates. Quantum process calculi \citemain{upro} have been
+  proposed to capture the nature of concurrent and communicating
+  quantum systems.  Recent surveys on the state of the art for quantum
+  programming languages can also be found
+  \citemain{RudigerSurvey,GaySurvey}.
 %%} 
 \item
 Researchers are trying 
@@ -566,6 +569,16 @@ implementation of QIO is available through Hackage,
 and has been used in third year undergraduate level and masters level
 courses on quantum computation in the School of Computer Science, at
 The University of Nottingham.
+
+\subsection*{Quipper}
+
+\begin{figure}
+\includegraphics[width=\columnwidth]{teleport.eps}
+\caption{Example of circuit produced by Quipper}\label{fig:quipper-circ}
+\end{figure}
+
+Quipper \citetrack{quipper-pldi,quipper-rc} is an embedded, scalable
+functional programming language for quantum computing.
 
 \subsection*{Dependent Types}
 Dependent types are types which refer to (hence depend on)
