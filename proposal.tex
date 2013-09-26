@@ -17,7 +17,7 @@
 \input{prelude.tex}
 
 
-\title{Quantum Computing Meets Type Theory:\\
+\title{Type Theory Meets Quantum Computing:\\
  \Large A Framework for Certified Quantum Information Processing
 % \\
 % \LARGE (Case for Support)
@@ -40,16 +40,20 @@ already used to provide a previously unknown level of security
 computer science and related disciplines are facing the challenge of
 developing quantum algorithms \citemain{cacm} and protocols \textbf{and}
 providing evidence that their quantum software performs as
-specified. With the Quantum IO (QIO) monad \citetrack{txa:qio,asg:thesis} we have
+specified. With the Quantum IO (QIO) monad
+\citetrack{txa:qio,asg:thesis}, and more recently with the quantum
+programming language Quipper \citetrack{quipper-pldi,quipper-rc},
+which built upon many of the ideas presented in QIO, the authors have
 presented a framework for the development of quantum software within
 the functional programming language Haskell. Functional
 Programming is ideally suited to meet the challenge of quantum
 computing due to its ability to model
 non-standard effects. However, some aspects of Quantum Information Processing,
 in particular preservation of reversibility, cannot be modelled satisfactorily
-within Haskell's conventional type system. In his PhD work, Green shows
-that this issue can be addressed by moving to a more expressive type
-system, i.e. the dependently typed programming language Agda \citemain{agda}.
+within Haskell's conventional type system. In his PhD work
+\citetrack{asg:thesis}, Green shows that this issue can be addressed
+by moving to a more expressive type system, i.e. the dependently typed
+programming language Agda \citemain{agda}. 
 
 This is only the first glimpse of the role dependent types could play
 for Quantum Information Processing --- there is much more to come!
@@ -93,7 +97,7 @@ Information Processing, which focus on automatisation while our
 strength is expressivity.% \citemain{quanto,upro}.
 
 Our proposal is for a four year project with Alexander S. Green as the
-RA and one PhD student.
+RA.
 
 % Quantum computers have been shown to offer a possible exponential
 % speed up over certain classical algorithms. For example, Shor's
@@ -226,7 +230,10 @@ and 2007, QPL 2006, QNET workshops 2007; 2008; and 2009, QICS workshop
 irreversible computations} \citetrack{txa:qpl06}, appeared in the
 proceedings of QPL 2006, and he co-authored a chapter on \emph{The
 Quantum IO Monad}, which appears in the book \emph{Semantic Techniques
-in Quantum Computation} \citetrack{txa:qio}. 
+in Quantum Computation} \citetrack{txa:qio}. Green also lectured third
+year undergraduate level and masters level courses on quantum
+computation in the School of Computer Science, at The University of
+Nottingham. 
 
 Since completing his PhD, Green has held a postdoctoral research
 fellowship position at Dalhousie University, in Halifax, Nova Scotia,
@@ -235,13 +242,11 @@ developing Quipper, a scalable quantum programming language. He
 co-authored two papers on Quipper: \emph{Quipper: A Scalable Quantum
   Programming Language} \citetrack{quipper-pldi}, which appeared
 in the proceedings of PLDI 2013, and \emph{An Introduction to Quantum
-  Programming in Quipper} \citetrack{quipper-rc}, which as well as
-appearing in the proceedings of RC2013, was also presented by Green at
-the workshop.
+  Programming in Quipper} \citetrack{quipper-rc}, which appeared in
+the proceedings of RC2013. As well as attending many of the QCS
+project workshop meetings, Green presented the work on Quipper at
+RC2013.
 
-Green has also lectured third year undergraduate level and masters
-level courses on quantum computation in the School of Computer
-Science, at The University of Nottingham. 
 
 \subsection*{Nottingham - host organisation}
 
