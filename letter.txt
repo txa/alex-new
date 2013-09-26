@@ -1,0 +1,21 @@
+Dear colleagues,
+
+Alexander Green and myself are preparing a research proposal to
+continue work started in Alexander's PhD thesis. During his PhD work
+Alexander developed a functional interface to quantum computing (the
+Quantum IO monad) which can be extended to provide a type theoretic
+framework for quantum computing. Like any other research proposal the
+actual impact depends very much on the interaction with other
+researchers which is also important for our case for support. Hence,
+we are asking for feedback on our proposal and also offers for
+potential collaborations, maybe letters of support. Also suggestions
+to approach other people or groups are welcome. As it is frequently
+the case we are under some time pressure and hope to be able to submit
+a proposal by end of May.
+
+I attach our draft case for support and also our draft impact
+statement (this is a new requirement by EPSRC, any advice what to say
+here would be particularly welcome).
+
+Cheers,
+Thorsten & Alex

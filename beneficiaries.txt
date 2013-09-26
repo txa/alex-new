@@ -1,0 +1,5 @@
+1. Researchers working in quantum information processing
+2. Students studying quantum information processing
+3. Interested researchers in other areas (e.g. Physics)
+4. Companies seeking to certify quantum protocols
+5. Members of the public interested in quantum information processing

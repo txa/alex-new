@@ -1,0 +1,86 @@
+\usepackage{eepic}
+\usepackage{times} \usepackage{mathptm}  
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{url}
+\RequirePackage{vmargin}
+\setmarginsrb{1.9cm}{2cm}{1.9cm}{2cm}{0pt}{0pt}{0pt}{0pt} %jg 2cm all round
+  %ctm shaves another mil left and right
+\setlength{\columnsep}{1cm}
+
+%jg redefined title layout
+\makeatletter
+\def\maketitle{%
+\begin{flushleft}
+\LARGE\bfseries \@title \bigskip \\
+\Large\mdseries \@author \medskip
+\end{flushleft}%
+}
+\makeatother
+
+\setlength{\marginparwidth}{1cm}
+\setlength{\marginparsep}{3mm}
+\def\marginnote#1{\marginpar{\scriptsize\itshape\raggedright#1}}
+
+%%%\renewcommand{\baselinestretch}{0.9641}\small\normalsize
+% \renewcommand{\baselinestretch}{0.972373}\small\normalsize %jg ick!
+\makeatletter
+%%%\setlength{\parskip}{0\p@ \@plus 0.98\p@}
+% \setlength{\parskip}{0.75\parskip} %jg prefer a parindent
+\renewcommand{\section}{\@startsection
+ {section}%
+ {1}%
+ {0mm}%
+ {-\baselineskip}%
+ {0.5\baselineskip}%
+ {\Large\bfseries}%
+ }%
+\renewcommand{\subsection}{\@startsection
+ {subsection}%
+ {2}%
+ {0mm}%
+ {-0.75\baselineskip}%
+ {0.375\baselineskip}%0.01
+ {\large\bfseries}%
+ }%
+\makeatother
+
+\pagestyle{empty}
+
+% \parskip 0.05in \parindent 0in %jg prefer a parindent
+\newcommand{\sparadrap}[1]{\par\mbox{\textbf{#1}$\;\;$}}
+\newcommand{\squashit}{\itemsep=0pt
+  \topsep=0pt \parskip=0pt \parsep=0pt}
+\let\ITEMIZE\itemize \def\itemize{\ITEMIZE\squashit}
+
+\newcommand{\remph}{\emph}
+\newcommand{\demph}{\textbf}
+
+\newcommand{\bsize}[2]{{#1\textbf{#2}\par}}
+\newcommand{\bL}{\vspace{0.1in}\noindent\bsize{\Large}}
+\newcommand{\bl}{\bsize{\large}}
+\newenvironment{titemize}{
+  \begin{list}{\ensuremath{\bullet}}{
+  \setlength{\topsep}{1pt}
+  \setlength{\parsep}{0pt}
+  %\setlength{\parskip}{0pt}
+  \setlength{\itemsep}{1pt}
+  \setlength{\partopsep}{0pt}}
+}
+{
+  \end{list}
+}
+
+\usepackage{lscape}
+\usepackage{pstricks}
+\usepackage{pst-grad}
+%%\usepackage{pst-xkey}
+\usepackage{multido}
+
+\makeatletter
+\makeatother
+
+\newcommand{\surl}[1]{\small{\url{#1}}}
+\newcommand{\parametris}{parametriz}
+
+

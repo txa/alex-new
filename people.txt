@@ -1,0 +1,110 @@
+This file contains a list of people who may be interested in our
+proposed research, as well as possible vistors, people to visit, and
+people we can ask for letters of support:
+
+Oxford:
+	Samson Abramsky
+	Bob Coecke
+<<<<<<< people.txt
+	Ross Duncan (Brussels)
+	Andres Doering
+=======
+	Ross Duncan
+	Andreas Doering
+	Simon Perdrix
+	Dusklo Pavlovic
+>>>>>>> 1.2
+
+Grenoble:
+	Jonathan Grattage
+
+Imperial College:
+	Martin Plenio
+
+UCL:
+	Dan Browne
+
+Dalhousie:
+	Peter Selinger
+
+Indiana:
+	Amr Sabry
+
+Glasgow:
+	Simon Gay
+
+McGill:
+	Prakash Panangaden
+
+York:
+	Peter Hines
+
+???:
+	Juliana Vizzotto
+
+<<<<<<< people.txt
+Edinburgh
+	Elham Kashefi
+
+Sussex
+	Ian McKie
+
+Birmingham 
+	   Steve Vickers
+
+=======
+Ediburgh:
+	Elham Kashefi
+
+Vrije Universiteit Brussel:
+	Sonja Smets
+	Ellie d'Hondt
+
+Birmingham:
+	Steve Vickers
+
+Sussex:
+	Ian Mackie
+
+Radboud Universiteit Nijmegen:
+	Bas Spitters
+
+----------------------------------------------------------------------
+below are the people to whom we are sending the cfs to ask for feedback
+
+Samson Abramsky <samson.abramsky@comlab.ox.ac.uk>, 
+Bob Coecke <Bob.Coecke@comlab.ox.ac.uk>, 
+Ross Duncan <Ross.Duncan@comlab.ox.ac.uk>, 
+Jonathan Grattage <Jonathan.Grattage@imag.fr>, 
+andreas.doering@comlab.ox.ac.uk, 
+Peter Selinger <selinger@mathstat.dal.ca>, 
+sabry@cs.indiana.edu, 
+Simon Gay <simon@dcs.gla.ac.uk>, 
+Prakash Panangaden <prakash@cs.mcgill.ca>, 
+Peter Hines <peter.hines@cs.york.ac.uk>, 
+Dusko Pavlovic <dusko@kestrel.edu>, 
+Elham Kashefi <Elham.Kashefi@comlab.ox.ac.uk>, 
+Dan Browne <d.browne@ucl.ac.uk>, 
+Ellie d Hondt <eldhondt@vub.ac.be>, 
+Martin Plenio <m.plenio@imperial.ac.uk>, 
+Simon Perdrix <Simon.Perdrix@comlab.ox.ac.uk>, 
+Sonja Smets <sonsmets@vub.ac.be>, 
+Steve Vickers <s.j.vickers@cs.bham.ac.uk>, 
+Ian Mackie <i.mackie@sussex.ac.uk>, 
+Bas Spitters <B.Spitters@cs.ru.nl>, 
+Juliana Kaizer Vizzotto <juvizzotto@gmail.com>
+
+-----------
+people from above who we haven't cited
+
+
+Ross Duncan <Ross.Duncan@comlab.ox.ac.uk
+andreas.doering@comlab.ox.ac.uk,
+Peter Hines <peter.hines@cs.york.ac.uk>,
+Dusko Pavlovic <dusko@kestrel.edu>,
+Ellie d Hondt <eldhondt@vub.ac.be>, 
+Martin Plenio <m.plenio@imperial.ac.uk>, 
+Sonja Smets <sonsmets@vub.ac.be>,
+Steve Vickers <s.j.vickers@cs.bham.ac.uk>,
+Bas Spitters <B.Spitters@cs.ru.nl>, 
+>>>>>>> 1.2

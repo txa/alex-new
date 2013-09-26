@@ -1,0 +1,1192 @@
+\documentclass[a4paper]{article}
+
+\usepackage{pstcol}
+\usepackage{pst-text}
+\usepackage{color}
+
+\usepackage{multibib}
+\newcites{track}{Publications}
+\newcites{main}{References}
+
+% \newcommand{\citetrack}[1]{\cite{#1}}
+% \newcommand{\citemain}[1]{\cite{#1}}
+
+
+\input{Qcircuit}
+\input{braket}
+\input{prelude.tex}
+
+
+\title{Quantum Computing Meets Type Theory:\\
+ \Large A Framework for Certified Quantum Information Processing
+% \\
+% \LARGE (Case for Support)
+}
+\author{(Case for Support) --- Thorsten Altenkirch and Alexander S. Green}
+\date{}
+
+\begin{document}
+
+%\twocolumn[
+\maketitle
+\section*{Summary}
+Quantum Information Processing is an emerging technology with an enormous
+potential: while hypothetical quantum computers can solve certain
+computational problems exponentially faster than conventional
+computers \citemain{shor, simon},
+cryptographic protocols based on quantum keys \citemain{BEN84,e91} are
+already used to provide a previously unknown level of security
+\citemain{qkd}. Researchers in
+computer science and related disciplines are facing the challenge of
+developing quantum algorithms \citemain{cacm} and protocols \textbf{and}
+providing evidence that their quantum software performs as
+specified. With the Quantum IO (QIO) monad \citetrack{txa:qio,asg:thesis} we have
+presented a framework for the development of quantum software within
+the functional programming language Haskell. Functional
+Programming is ideally suited to meet the challenge of quantum
+computing due to its ability to model
+non-standard effects. However, some aspects of Quantum Information Processing,
+in particular preservation of reversibility, cannot be modelled satisfactorily
+within Haskell's conventional type system. In his PhD work, Green shows
+that this issue can be addressed by moving to a more expressive type
+system, i.e. the dependently typed programming language Agda \citemain{agda}.
+
+This is only the first glimpse of the role dependent types could play
+for Quantum Information Processing --- there is much more to come!
+Quantum information processing is a complex topic and needs expressive
+notations for us to use it. Dependent types give rise to very expressive
+languages, which are extremely useful for specifying and certifying systems exactly.
+%{\color{red}evidence?}. 
+This makes them ideally suited to helping us to tackle the
+problem of specifying and implementing devices for quantum information
+processing. 
+
+% This is the core of Alexander S. Green's PhD
+% work \citemain{asg:thesis} in which he also addresses some key issues with
+% this approach which are related to the fact that Haskell's type system
+% is too weak to specify the invariants of reversible quantum
+% computations. He also suggests a way to address this problem by moving
+% to a stronger type system as realised within the dependently typed
+% functional programming language Agda \citetrack{agda}. 
+
+We propose to explore and validate this claim by developing a
+framework for formally certified Quantum Information Processing within a
+dependently typed programming system. Within this framework we plan to
+certify existing and emerging quantum algorithms and protocols \textbf{and}
+provide certified compilers to low level, physically plausible
+realisations of quantum computing such as measurement based quantum
+computing %\citemain{oneway,meascalc}.
+\citemain{oneway}.  The formal verification of 
+quantum protocols is especially relevant since applications of this
+technology are becoming commercially available \citemain{qci}.
+
+We will utilise this framework to develop and certify high level
+approaches to Quantum Information Processing such as Abramsky's,
+Coecke's and Selinger's graphical calculi %\citemain{ac1,ac2,ac3,abr,sel}. 
+\citemain{ac1,seldccc}. 
+We envisage
+that our framework will provide the language and software tools for
+other researchers to use in their work on high level approaches to
+Quantum Information Processing. Indeed, our proposal naturally
+complements the development of more specific calculi for Quantum
+Information Processing, which focus on automatisation while our
+strength is expressivity.% \citemain{quanto,upro}.
+
+Our proposal is for a four year project with Alexander S. Green as the
+RA and one PhD student.
+
+% Quantum computers have been shown to offer a possible exponential
+% speed up over certain classical algorithms. For example, Shor's
+% algorithm\citemain{shor} for finding the prime factors of large composite
+% numbers. However, the process of defining new quantum algorithms, or
+% programs for these quantum machines, is currently left in the realms
+% of the mathematics that are used to model the underlying quantum
+% mechanical aspects. Research into quantum programming languages is
+% necessary to propagate the techniques available when working with
+% quantum data, into the mainstream world of computer science. Quite a
+% few languages currently exist (see \citemain{RudigerSurvey,GaySurvey}),
+% but fail to grasp the structure of the very quantum effects that give
+% these computers their extra computational power. High-level quantum
+% languages such as QPL\citemain{qpl},  and
+% QML\citemain{txa:qml,jjgthesis,jjg:qml} have started to look at
+% abstractions that can be used to model these quantum structures
+% effectively. However, we believe a bottom-up approach is equally
+% suited to this task, and have been developing a low-level interface to
+% quantum computation that uses the well studied structure of monads to
+% give us explicit access to quantum effects. The work so far has
+% introduced the Quantum IO Monad (QIO) \citemain{txa:qio,asg:thesis}, a
+% library for writing quantum computations in the functional programming
+% language Haskell \citemain{haskell}. However, further research is required
+% to develop QIO into a fully developed quantum programming
+% language. One development, that seems necessary for QIO, is for it to
+% be developed in a dependently typed environment. Indeed, dependent
+% types are required to ensure the unitarity of operations that can be
+% defined. A little work has already been done on reimplementing QIO in
+% the dependently typed language Agda \citemain{agda}, but this is only the
+% tip of the iceberg for developing a formally verified functional
+% quantum programming language. 
+
+% Based on the previous work at Nottingham on the Quantum IO Monad, we
+% plan to explore how QIO can be further developed, with the ultimate
+% goal of producing QIO as a standalone quantum programming language,
+% that uses a monadic structure to model quantum effects, as well as a
+% dependent type system that leads to formally verified unitary
+% structures. We seek funding for an RA (Alexander S. Green, whose PhD
+% laid much of the groundwork for this proposal \citemain{asg:thesis}), and
+% a doctoral student, both here at Nottingham. As well as the
+% appropriate support for equipment and travel.
+
+%
+%]
+
+%\newpage
+
+\section*{Part 1: Track Record}
+
+\subsection*{Thorsten Altenkirch}
+Thorsten Altenkirch received his PhD from the University of
+Edinburgh in 1993. He has been a research assistant at the University of
+Edinburgh and at Chalmers University in Gothenburg, Sweden and has
+held lecturing positions at the University of Munich, Germany, and the
+University of Nottingham. Since October 2006 he has been a Reader in
+Computer Science at the University of Nottingham and in October
+2008 he founded the Functional Programming Laboratory together with
+Graham Hutton. Altenkirch and Hutton are now jointly leading the
+laboratory.
+
+Altenkirch's research interests are in Type Theory, Category Theory, Functional
+Programming and Quantum Programming. 
+Among his main achievements is
+the first formalised normalisation proof for System F
+\citetrack{alti:tlca93}
+, his work on normalisation by evaluation 
+\citetrack{alti:lics01}%,txa:jtait}
+, extensional equality within intensional Type Theory \citetrack{alti:lics99}
+, the development of container theory \citetrack{alti:cont-tcs}%,alti:jpartial}
+, on
+monads \citetrack{alti:fossacs10} 
+and on generic programming 
+\citetrack{alti:wcgp02}
+.
+Especially relevant for this proposal is the
+work with Green on the Quantum IO Monad \citetrack{txa:qio,txa:qpl06}
+, Grattage on QML \citetrack{txa:qml} and with Vizzotto and Sabry on
+modelling quantum computation \citetrack{txa:qarrows,txa:qpl05} using
+arrows. Altogether, he has published over 40 papers --- for a full list please
+consult \texttt{http://www.cs.nott.ac.uk/\~{}txa/publ/}.
+
+He has been on the program committee of a number of conferences and
+workshops, recently CiE 2008, TPHOLs 2009 and ITP 2010. He has
+organised TYPES meetings in 1998 and 2006 and has coedited the
+proceedings; and he has also been the program co-chair of PLPV 2009.  He
+organised a Dagstuhl seminar on dependently typed programming in 2004
+and has since organised two further workshops on this topic (DTP 2008
+and DTP 2010). He gave an invited lecture series on Type Theory at the
+University of Tallinn in 2003 and he was a visiting Professor at the
+Universit\`{e} Denis Diderot, Paris in  July 2007. He gave invited talks
+at the first workshop on quantum programming languages (QPL 2003), the
+workshop on normalisation by evaluation (NBE 2009) and at the special
+session on proof theory of CiE 2010.
+
+\twocolumn[
+
+He has been the Principal Investigator on two successfully completed
+EPSRC grants : \emph{Modelling Irreversible Quantum Computation}
+(GR/S30818/01), \emph{Observational Equality For Dependently Typed
+  Programming} (EP/C512022/1); and has been co-investigator on
+\emph{Theory and Applications Of Containers} (EP/C511964/1). 
+He is currently the principal investigator of two ESPRC
+projects: \emph{Reusability and Dependent Types} (EP/G034109/1), 
+networked with
+Oxford and Strathclyde, Nottingham is the lead site and 
+\emph{Theory And Applications of Induction
+  Recursion} (EP/G03298X/1), networked with Strathclyde and Swansea. 
+On the European level he has been active in the the
+TYPES and APPSEM coordination actions and has been involved in the
+QICS STREP. He also hosted a Marie-Curie fellowship (2006 - 2008). He
+is regularly teaching courses at the Midland Graduate School and has
+been the co-investigator of the associated EPSRC grant: \emph{Midlands
+  Graduate School in the Foundations of Computer Science}
+(GR/T06087/01). He has supervised 5 successfully completed PhD
+projects at Nottingham, two of them in the area of quantum
+programming \citetrack{jjgthesis,asg:thesis}. He has also lectured 
+on the subject of quantum computing at third year
+undergraduate level, masters level, and to research students 
+(at the Midlands Graduate School).
+
+\subsection*{Alexander S. Green}
+Alexander S. Green will be the researcher working full-time on the
+project. He has recently, and successfully defended his PhD thesis,
+\emph{Towards a formally verified functional quantum programming
+language} \citetrack{asg:thesis}, under Thorsten Altenkirch. His work has
+focused specifically on defining the first approximations of QIO, in
+both Haskell and Agda. 
+
+Green has presented his work at BCTCS 2006
+and 2007, QPL 2006, QNET workshops 2007; 2008; and 2009, QICS workshop
+2008, TFP 2008, and FitA May 2009. His paper, \emph{From reversible to
+irreversible computations} \citetrack{txa:qpl06}, appeared in the
+proceedings of QPL 2006, and he has co-authored a chapter on \emph{The
+Quantum IO Monad}, which appears in the book \emph{Semantic Techniques
+in Quantum Computation} \citetrack{txa:qio}. He has also lectured
+third year undergraduate level and masters level courses on quantum
+computation 
+% in the School of Computer Science, at The University of
+% Nottingham.% \citetrack{g53nsc:g54nsc}.
+
+\subsection*{Nottingham - host organisation}
+
+The School of Computer Science at the University of Nottingham
+is a research-led School in one of the leading Universities in
+the UK.	 The School was ranked 8th in the last Research Assessment
+Exercise, and the Functional Programming Lab within the School is
+one of four major research groups, with an international reputation
+for its work on formally-based approaches to software construction
+and verification.  The FP lab currently comprises 4 academic staff
+(Thorsten Altenkirch, Venanzio Capretta, Graham Hutton, and Henrik
+Nilsson), 2 postdoctoral fellows, and 9 PhD students.  To date the
+group has received \pounds 1.5M of EPSRC funding over 14 projects,
+and has 12 completed PhD students.
+
+The Functional Programming Lab provides a highly stimulating
+research environment for researchers and PhD students with weekly
+research meetings and frequent seminars. % Our research blog
+% %\citetrack{fplunchweb} 
+% \texttt{http://sneezy.cs.nott.ac.uk/fplunch/weblog/} 
+% is illustrative of the lively and exciting
+% research environment at Nottingham.
+
+% Together with Edinburgh,
+% Cambridge, Oxford and York, Nottingham is one of the leading
+% institutions for functional programming within the UK and given the
+% strength of functional programming in the UK, worldwide.
+% %%{\color{red}
+% %%(how much?) 
+% %%}
+
+% {\color{red} Add data: how much EPSRC money, how many PhD thesis
+%   completed, and any other evidence.}
+
+% The laboratory
+% comprises Thorsten Altenkirch, Venanzio Capretta, Graham Hutton and 
+% Henrik Nilsson as
+% academic members of staff, and has currently 2 research assistants and 10
+% PhD students.  
+
+%\twocolumn
+\vspace{1em}
+]
+
+
+
+
+{\small 
+\bibliographystyletrack{abbrv}
+\bibliographytrack{proposal} 
+}
+
+%\newpage
+
+\newpage
+% \null
+% \newpage
+% \null
+% \newpage
+
+\section*{Part 2: Proposed Research}
+
+\section{Background}
+
+\subsection*{Quantum Computing}
+Quantum computing is based on the realisation that computation based
+on quantum physics is fundamentally different than computation based
+on a classical model of the world. It was first observed by Feynman 
+\citemain{feynman81}
+that quantum processes cannot be efficiently modelled on a classical
+computer. This lead to the proposal of quantum computing as a
+fundamental notion. Famously, Shor showed that factorisation can be
+done in polynomial time on a hypothetical quantum computer
+\citemain{shor} while the
+best known classical algorithm needs exponential time
+\citemain{sieves}. This entails
+that a quantum computer would represent a threat to public key
+cryptography based on RSA \citemain{rsa} and other algorithms. However, quantum
+physics also provides a solution to this problem using secure quantum
+keys based on the no-cloning theorem which states that it is
+impossible to construct a precise copy of a given quantum
+state. Introductions to quantum computing for computer scientists are
+now widely available (\citemain{NC, mermin,cacm}) and the
+subject is being taught in advanced undergraduate courses
+such as the one at Nottingham (based on \citemain{mermin} and using QIO). 
+
+General purpose quantum computers are still only a hypothetical
+device. However, researchers in physics are making progress on these
+issues, exploiting a number of possible physical realisations of quantum
+computing \citemain{sussex,shorimpl}. The key to a successful
+implementation may not only lie in the realm of hardware but could
+also exploit different low level approaches to quantum computing, such
+as the measurement based approach \citemain{oneway,meascalc} 
+which is an alternative to the more
+conventional approach based on quantum circuits.
+
+Current work in the field of quantum computing is progressing in a number 
+of areas:
+\begin{itemize}
+\item
+Researchers are trying to identify problems and find quantum algorithms which
+offer a substantial speedup in comparison to classical approaches
+\citemain{cacm}, e.g. it is currently an open problem whether the graph
+isomorphism problem can be solved efficiently on a quantum computer
+\citemain{graph}.  
+\item
+%%{\color{red}
+Quantum cryptographic protocols such as BB84 \citemain{BEN84} and E91
+\citemain{e91} have been developed to provide unconditionally secure
+distribution of keys, that can then be used to provide secure
+communication over classical channels. Systems are being developed
+that can actually implement these protocols over networks of optic
+fibre. Recent work includes \citemain{qkd} which introduces an
+implementation that has been tested over 184.6km of optic fibre, 
+and researchers at Toshiba \citemain{toshiba} have also
+demonstrated a system that is able to continuously distribute keys
+over a 36 hour period at 1 Mbit/s. 
+\item A number of quantum programming languages have been proposed,
+  such as QPL \citemain{qpl}, inspired by flowcharts, and QML
+  \citetrack{txa:qml,jjgthesis} a first order functional quantum
+  programming language. This languages offer specific constructs which
+  make it easier to express quatum algorithms on a high level.
+  Quantum process calculi \citemain{upro} have been proposed to capture
+  the nature of concurrent and communicating quantum systems.  Recent
+  surveys on the state of the art for quantum programming languages
+  can also be found \citemain{RudigerSurvey,GaySurvey}.
+%%} 
+\item
+Researchers are trying 
+to get a better understanding of the
+high level structure of Quantum Information Processing. A promising approach here
+is the work by Abramsky, Coecke and Selinger \citemain{ac1,seldccc}, 
+which exploit
+categorical models of quantum systems, i.e. dagger compact closed
+categories \citemain{seldccc}, to develop a graphical calculus for reasoning about
+quantum systems \citemain{kgqm}. Extensions of this calculus have already
+been used to verify some basic quantum protocols \citemain{perdrix}.
+\end{itemize}
+
+% Quantum computation makes use of the physical properties that appear
+% when looking at the behaviour of particles at their lowest
+% level. The idea of quantum computing can be tracked back to a talk by
+% Richard P. Feynman \citemain{feynman81} on simulating physics with
+% computers, showing that a classical computer is unable to efficiently
+% model quantum systems.
+% The state of a particle can be described by a wave function
+% that collapses to a classical value when we observe the particle. In
+% computer science, we often think of things in terms of bits, and it is
+% therefore natural to define a quantum bit (or qubit) as a quantum
+% particle that can be described by a wave function over two orthogonal
+% states (which we shall denote $\ket{0}$ and $\ket{1}$). The state of
+% an arbitrary qubit can be given by $\alpha\ket{0} + \beta\ket{1}$,
+% where $\alpha, \beta \in \mathbb{C}$ (such that $| \alpha |^2 + | \beta
+% |^2 = 1$) define the amplitudes of each base state within an overall
+% superposition of both. A measurement of a qubit will leave us with the
+% state $\ket{0}$ with probability $| \alpha |^2$ or $\ket{1}$ with
+% probability $| \beta |^2$. It is when we start to look at multiple
+% qubit \emph{systems} that we can see even more interesting
+% behaviour. A system of $n$ qubits can exist in a linear superposition
+% of all $2^n$ bit strings of length $n$, and thus the \emph{state size}
+% grows exponentially with the number of qubits. States can become
+% \emph{entangled}, whereby the state of each qubit within a system can
+% not be described fully on its own, but yet it can still be treated as
+% an individual particle. It is these entangled states, that when used
+% effectively within a computation, can give rise to the exponential
+% speed up over classical solutions. It is a slight over-simplification,
+% but you can think of a quantum computation as running in parallel over
+% all the states in a superposition. However, when a system is measured,
+% it will collapse into a single base state. This means that measuring a
+% single qubit within a larger quantum system can have side effects that
+% change the state of other qubits with which it was entangled.
+
+\subsection*{Functional Programming}
+Functional programming is based upon the idea of programs being
+functions from arguments to results, rather than operations that
+modify stored values.  But it is much more than just another
+programming paradigm, it creates a bridge between abstract reasoning and
+concrete programming. Thus it provides the necessary mathematical tools
+to put software engineering on solid foundations --- with the aim of
+repeating the success of mathematical methods in conventional
+engineering.  The research carried out at the Functional Programming
+Laboratory in Nottingham reflects this broad vision:
+\begin{itemize}
+\item We are exploring functional notions of effects in the design and
+  application of modelling and simulation languages, and in reasoning
+  about various forms of effects including state, exceptions,
+  interrupts, concurrency, and also quantum effects
+  \citemain{swierstra-altenkirch:beast,wss} .
+\item Inspired by the Curry-Howard equivalence, we are investigating
+  novel languages based upon dependent types, with the aim of bringing
+  programming and verification closer together \citemain{morris:thesis,pisig}.
+\item We are exploiting mathematical concepts such as monads and
+  arrows that arise in category theory to find new ways to structure
+  and reason about programs \citemain{mauro:thesis,george}.
+\end{itemize}
+Imperative languages exploit side-effects based on the concept of an
+updatable memory. This notion of effects is also available in
+functional programming languages like Haskell, via the notion of a
+monad, here Haskell's IO monad. However, this notion of an effect is
+not hardwired in the core of the language. As a consequence functional
+programming languages are much more flexible when it comes to realise
+novel notions of effects such as transaction based concurrency 
+\citemain{stm},
+or as we have shown recently for Quantum Information Processing \citetrack{txa:qio,asg:thesis}.
+At the same time, functional implementations of effects can be
+understood as providing a constructive mathematical semantics of
+various effects and hence provide a base for reasoning about them
+\citemain{swierstra-altenkirch:beast,wss}. 
+This is not just a hypothetical suggestion
+but indeed exploiting dependently typed languages such as Agda we have
+used this to reason about multi-core algorithms \citemain{alti:tfp08}.  
+
+% Functional programming gives us a mathematically based way of defining
+% computations as pure functions. This gives rise to the problem that in
+% computation, there are many things that we want to do that can't be
+% modelled as pure functions. For example, any sort of I/O is impure, as
+% the behaviour of a function can depend on more than just the
+% arguments given to the function. However, the categorical notion of a
+% Monad can be used to model this impure behaviour. The type of a
+% function can then describe the side effects that may take place when
+% the function is called. In Haskell \citemain{haskell}, for example, all
+% I/O takes place using the IO Monad. Having a monadic structure means
+% that any program which makes use of impure functions must do so
+% explicitly. It has also been shown how the design of a monadic
+% structure can give a sound base for reasoning about these effectful
+% computations \citemain{swierstra-altenkirch:beast,wss}.
+% This leaves the area of functional programming in a unique
+% place to define quantum programming languages. The side effects that
+% can be caused by measurements in a quantum computation can be
+% described explicitly by using a monadic structure.
+
+\subsection*{The Quantum IO Monad in Haskell}
+
+\begin{figure}
+\begin{pspicture}(-1,-1)(7,7)
+
+\psframe[framearc=0.3](0.1,0)(2.6,2.5)
+\rput(1.35,2.0){\psscaleboxto(2.2,0){U Monoid}}
+\rput(1.35,1.2){\psscaleboxto(2,0){reversible}}
+\rput(1.35,0.4){\psscaleboxto(2,0){deterministic}}
+
+\rput(1.35,3.3){\psline[linewidth=2pt]{->}(0,-0.8)}
+\pstextpath{
+\rput(1.65,3.3){\psline[linewidth=1pt,linearc=0.8,linecolor=white]{->}(0,-0.8)}
+}{
+Run
+}
+
+\psframe[framearc=0.3](0,3.3)(2.7,6)
+\rput(1.35,5.55){\psscaleboxto(2.4,0){QIO Monad}}
+\rput(1.35,4.65){\psscaleboxto(2,0){irreversible}}
+\rput(1.35,3.75){\psscaleboxto(2,0){probabilistic}}
+
+\psline[linewidth=2pt,linearc=0.8]{->}(2.7,4.3)(3.5,4.6)(4.5,4.25)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{->}(2.7,4.6)(3.5,4.9)(4.5,4.55)
+}{
+Initialisation
+}
+
+\psline[linewidth=2pt,linearc=0.8]{<-}(2.1,3.3)(3.1,2.9)(4,3.6)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{-}(2.1,3.0)(3.1,2.7)(4,3.3)
+}{
+Measurement
+}
+
+
+\psline[linewidth=2pt]{<->}(2.6,1.6)(4,2.5)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{-}(2.7,1.3)(4.1,2.2)
+}{
+Modifies
+}
+
+
+\psframe[shadow=true,shadowsize=8pt](4,1.75)(6,4.25)
+\rput(5,3.5){\psscaleboxto(1.2,0){Qubit}}
+\rput(5,2.5){\psscaleboxto(1.2,0){Store}}
+
+\end{pspicture}
+\caption{Structures used in the Quantum IO Monad}\label{fig:qio-haskell}
+\end{figure}
+
+The Quantum IO Monad \citetrack{txa:qio,asg:thesis} is defined as a
+Haskell library that acts as an interface to quantum computation
+(figure \ref{fig:qio-haskell}). It uses a monadic structure that gives
+explicit access to the effectful nature of measurements in quantum
+computation.  Computations in QIO usually consist of an initialisation
+stage, a unitary transformation, i.e. a reversible computation, and a
+measurement stage. The unitary transformations (the U monoid, actually
+a group) are by their very nature, pure, and as such can be defined
+separately from the monadic structures of QIO. The implementation
+allows unitary operators to contain conditional structures, following
+the ideas of quantum data and control introduced by QML
+\citetrack{txa:qml}, as well as ancillary qubits that can be used
+within a unitary structure, following from the ideas of heap and
+garbage introduced in \citetrack{txa:qpl06}. These features
+necessitate side conditions that can only be checked at run-time to
+ensure unitarity.
+% , such as making sure an ancillary qubit
+% is returned to its initial state by the unitary structure that uses
+% it. 
+A stronger type system, i.e. a dependently typed language, makes it
+possible to provide evidence so that these side conditions are
+checked at compile time, by the type checker. The current Haskell
+implementation of QIO is available through Hackage,
+and has been used in third year undergraduate level and masters level
+courses on quantum computation in the School of Computer Science, at
+The University of Nottingham.
+
+\subsection*{Dependent Types}
+Dependent types are types which refer to (hence depend on)
+data. A typical example is the type of vectors: we write
+$\mathrm{Vec}\,A\,n$ for the type of length $n$ sequences of type $A$
+items. Vectors refine the ubiquitous types of lists $[A]$.
+Conventionally, a program $\mathrm{idM}$ computing the identity
+matrix, represented as a sequence of sequences of real numbers, of a
+given finite dimension would have the type $\mathrm{idM} : \Bbb{N} \to
+[[\Bbb{R}]]$. In a dependently typed language the same program could
+be given the more informative type $\mathrm{idM} : (n:\Bbb{N}) \to
+\mathrm{Vec}\,(\mathrm{Vec}\,\Bbb{R}\,n)\,n$, clearly indicating the
+relationship between the value of the input and the structure of the
+output; and documenting the fact that $\mathrm{idM}$ always returns
+square matrices.
+
+Dependent types have their origin in the constructive foundations of
+mathematics developed by the Swedish
+philosopher and mathematician Per Martin-L\"of, who showed that the
+\emph{Curry-Howard} isomorphism between simple types and propositional
+logic naturally extends to an isomorphism between dependent types and
+higher-order constructive logic.  Exploiting this equivalence between
+logical propositions and types, dependent types have been used as the
+basis for proof assistants --- the most advanced system developed in
+Europe, Coq, has been used to formalise Mathematics (e.g.\
+the proof of the four colour theorem
+\citemain{gonthier:four-colour-paper}) and to verify programs (e.g.\
+correctness of a C
+compiler \citemain{compcert-back}).
+
+The language Agda \citemain{agda}, developed by Ulf Norell, is a functional
+programming language based on dependent types, enabling programmers to
+express strong invariants by using its expressive type system. At the
+same time Agda is an interactive theorem prover, like Coq, by simply
+exploiting the Curry Howard equivalence. The powerful idea of using
+reflection, which is also the base for the formalisation of the 4
+colour theorem in Coq, provides opportunities for essential
+automatisation of trivial sub proofs. Agda has been very well received
+by the community due to Norell's pragmatic approach to tool
+development (see the Agda wiki)
+and is increasingly used in many places 
+(E.g. \citemain{agda4}).
+
+In the programming language community there is an increasing interest
+in dependently typed programming due to its expressiveness and its
+potential to capture many, if not all, extensions to type
+systems. Consequently there are a number of dependently typed systems
+and languages under development such as Trellis \citemain{trellis}, Omega
+\citemain{omega} and Epigram 2.
+
+% The study of dependent types follows from Per Martin-Lof's
+% intuitionistic type theory \citemain{itt}.
+
+% \subsection*{The Quantum IO Monad in Agda}
+% The reimplementation of QIO in Agda \citemain{asg:thesis} uses the
+% dependent type system to give formal proofs that the unitary
+% structures that can be defined are indeed unitary. This is important
+% for the conditional structures and the use of ancillary qubits, that
+% were introduced in the original Haskell implementation. The
+% implementation is only a first approximation, and is impeded by the
+% current lack of an implementation of complex numbers in Agda. However,
+% computations can be written in QIO, and compiled down to an underlying
+% floating point representation of complex numbers, in which we must
+% postulate many of the facts that would hold for a true implementation
+% of the complex number field.
+
+\subsection*{Example: using dependent types for QIO}
+\label{sec:dependent-types-qio}
+
+In the Haskell implementation of the QIO monad we provide an operation
+\texttt{ifq} which allows us to run unitary quantum computations
+conditionally, depending on the value of a qubit; without measuring it. 
+The type of this operation is 
+\begin{verbatim}
+ifq : Qbit -> (Bool -> U) -> U  
+\end{verbatim}
+Here \texttt{Qbit} is the type of references to qubits in the quantum
+memory and \texttt{U} is the type of unitary transformations. For
+example
+\begin{verbatim}
+ifq x (\ b -> if b then uhad y 
+                   else mempty)  
+\end{verbatim}
+will perform a Hadamard transform on qubit \texttt{y} conditionally 
+depending on the value of qubit \texttt{x}. 
+This corresponds to the following quantum circuit:
+
+\[
+\Qcircuit @C=1em @R=1em {
+  \ket{x} & & \ctrl{1}        & \qw \\
+  \ket{y} & & \gate{Hadamard} & \qw
+}
+\]
+
+
+However, the typing of \texttt{ifq} is too imprecise to ensure that
+unitarity is preserved. For example we can express the following
+operation, which unconditionally resets the \texttt{x} qubit to $\ket{0}$:
+\begin{verbatim}
+ifq x (\ b -> if b then unot x 
+                   else mempty)  
+\end{verbatim}
+This operation is certainly not unitary. In the current implementation
+running such a program would lead to a runtime error. This is
+certainly not 
+satisfactory. In a dependently typed environment this issue can be
+addressed by introducing a predicate
+\begin{verbatim}
+Sep : Qbit -> U -> Set
+\end{verbatim}
+where \verb+Sep x u+ is the set of proofs certifying that the qubit \texttt{x} is separable
+from the unitary \texttt{u}. The type of \texttt{ifq} now becomes:
+\begin{verbatim}
+ifq : (x : Qbit) 
+   -> (us : Bool -> U) 
+   -> ((b : Bool) -> Sep x (us b)) 
+   -> U  
+\end{verbatim}
+Here we use depdendent function types \verb+(x : A) -> B x+ to 
+avoid any possible runtime errors by requiring a proof
+that the qubit we branch over is separable from both
+branches. Moreover this fact is formally certified in the
+implementation. For the first instance we can easily prove that
+\texttt{x} is separable from both branches because it doesn't occur
+them (this is a sufficient but not a necessary condition). In the 2nd
+case this is not provable since \texttt{x} is not separable from
+\verb+unot x+.
+
+\section{Programme and Methodology}
+
+Our approach is driven by the development of the framework: first
+implementing the QIO framework (figure \ref{fig:qio-fw}) within a dependently typed system and
+then using and extending this framework to certify known and novel
+quantum algorithms and protocols. We also plan to use and extend this
+framework in two directions: on the back-end we aim to explore compilation
+into quantum hardware and on the front-end we look at the
+representation of high level structures within our framework. The
+certified compilation of quantum algorithms would be ideally suitable
+as a PhD project. 
+
+The success of our project depends very much on the interaction with
+our colleagues in the area of quantum information processing. We plan
+to exploit contacts which have developed during the QNET project in
+several work packages. To focus and develop these interactions we plan
+to organise a a workshop related to the QIO framework in the middle of
+the project.
+
+To see wether current methods for developing certified programs are
+applicable in quantum information processing is an important research
+challenge. Providing answers here will feed back on not just the design of
+reasoning formalisms, but also on the way we think about and approach
+quantum structures.
+
+\begin{figure}
+\begin{pspicture}(-1,-1)(7,10)
+
+\rput(1.6,6.1){\psline[linewidth=2pt]{<->}(0.7,1.6)}
+\pstextpath{
+\rput(1.3,6.3){\psline[linewidth=1pt,linecolor=white]{-}(0.84,1.92)}
+}{
+Reasoning
+}
+
+\rput(3.7,7.7){\psline[linewidth=2pt]{<->}(0.7,-1.6)}
+\pstextpath{
+\rput(4,8){\psline[linewidth=1pt,linecolor=white]{-}(0.84,-1.92)}
+}{
+Programming
+}
+
+\rput(1.6,2.9){\psline[linewidth=2pt]{<->}(0.7,-1.6)}
+\pstextpath{
+\rput(1.3,2.8){\psline[linewidth=1pt,linecolor=white]{-}(0.84,-1.92)}
+}{
+Simulation
+}
+
+\rput(3.7,1.3){\psline[linewidth=2pt]{<->}(0.7,1.6)}
+\pstextpath{
+\rput(4,1.1){\psline[linewidth=1pt,linecolor=white]{-}(0.84,1.92)}
+}{
+Compilation
+}
+
+\pscircle[linecolor=black,fillcolor=cyan,fillstyle=solid](3,8.5){1}
+\rput(3,8.5){\psscaleboxto(1.3,0){User}}
+
+\psframe[linecolor=black,fillcolor=cyan,fillstyle=solid](1,3)(5,6)
+\rput(3,4.9){\psscaleboxto(2,0){QIO}}
+\rput(3,4.1){\psscaleboxto(3,0){framework}}
+
+\pscircle[linecolor=black,fillcolor=cyan,fillstyle=solid](3,0.5){1}
+\rput(3,0.8){\psscaleboxto(1.2,0){Hardware}}
+\rput(3,0.5){\psscaleboxto(0.2,0){or}}
+\rput(3,0.2){\psscaleboxto(1.7,0){Physical Model}}
+
+\end{pspicture}
+\caption{Structure of the QIO framework}\label{fig:qio-fw}
+\end{figure}
+
+Based on the summary above, we arrive at the following work packages:
+
+\subsection*{WP1 : The QIO framework in a dependently typed system}
+\label{sec:wp:qio}
+
+In the final chapters of his PhD thesis, Green develops the basic
+ingredients for a framework of certified quantum computation. This is
+inspired by the Haskell QIO monad but adds the necessary structure to
+reason about quantum algorithms expressed in this monadic form. It
+also addresses the issue of being able to check the side-conditions to
+achieve unitarity statically.
+
+This development can be viewed as a proof of concept which needs
+further refinement to make it usable in practice. Our aim is to
+provide a scalable, certifiable and efficient implementation of the QIO
+framework in a dependently typed system, such as Agda, Coq or Epigram
+2.  One of the first issues to be addressed is the choice of system,
+each of the above has specific advantages and disadvantages: Coq is
+the most stable system with the most extensive library, Agda is
+especially good in supporting programming, while Epigram 2 is going to
+offer a novel extensional and generic Type Theory but is currently at
+a very experimental stage.
+
+One of the issues we need to address is using an implementation of
+constructive reals replacing the unsound use of floating point numbers
+and postulates in Green's PhD prototype. Here, Coq would provide clear
+advantages since we could build on the implementations from the
+constructive mathematics library \citemain{CORN}, such as the constructive
+reals \citemain{realsincoq}. 
+Recently Li Nuo has implemented a
+library for constructive reals and complex numbers for Agda
+but there isn't much experience with using it.
+
+Another issue we need to address is the fact that we need to extend
+the QIO framework with a notion of distributed quantum computation to be
+able to model quantum protocols adequately. We already have experience
+on how to model conventional distributed programming in a dependently
+typed setting \citemain{alti:tfp08} and we are hopeful that it should be possible to
+transfer this approach to a quantum setting.
+
+The formalisation of quantum mechanics was one of the motivating
+examples in our recent paper on relative monads \citetrack{alti:fossacs10}.
+We envisage that this pattern will be useful in our implementation.
+
+\subsubsection*{Research challenges}
+\label{sec:rsearch-challenges}
+
+The main research challenge is to develop a framework which is useful for
+researchers in the field of quantum computing who are not specialists
+in Type Theory. The integration of concurrency and quantum information
+processing in a type theoretic framework is also an important issue 
+we hope to address.
+
+\subsection*{WP2 : Development of certified quantum algorithms and protocols }
+\label{sec:wp2}
+
+The development of the QIO framework (WP1) needs to be informed by
+experiments in using the framework. 
+We will start by using the QIO framework for the
+certified development of classical quantum algorithms and protocols
+such as teleportation, super dense coding, Deutsch's algorithm,
+Simon's algorithm, Shor's algorithm and Grover's algorithm. While the
+algorithms are well known, to our knowledge nobody has yet formally
+verified them using an interactive theorem prover. We also aim for an
+effective way to develop certified quantum algorithms, based on our
+experience in using a type theoretic framework for conventional
+algorithms. I.e. instead of first writing an algorithm and then
+verifying it, we aim at an integrated process where algorithm and
+verification are developed in tandem.
+
+Having honed our skills on well established quantum algorithms we
+intend to use our framework to verify a more recent algorithm or
+protocol whose correctness may not yet be accepted by the community ,
+e.g.  examples can be found in \citemain{cacm} ---
+thus proving the usefulness of our approach for cutting edge research
+in quantum algorithms. This will also provide a test-case for
+dependently typed programming which has shown its usefulness in a
+conventional setting \citemain{gonthier:four-colour-paper}.
+
+In traditional protocol verification, formal methods have proved to be
+of great help in the design and  consolidation of protocols. This has
+not yet been brought over to work with quantum protocols. Our project
+would be a further step in this direction, which is extremely timely
+given the emergence of quantum protocols and their potential
+usefulness in the near future.
+
+Simon Gay and his group in Glasgow are exploring quantum process
+calculi. We would like to collaborate with them and investigate how
+aspects of their calculus and their case studies can be expressed in
+our framework.
+
+% %%{\color{red}
+% Recent motivation in finding new algorithms
+% comes from the fact that it has been shown many
+% quantum algorithms that are able to offer an exponential speed up over
+% the best known classical counter-parts are all specific cases of the
+% more general \emph{hidden subgroup problem}. E.g. Shor's algorithm
+% finds the symmetries of the group formed using addition modulo $N$.
+% This discovery has lead to new algorithms being found (see
+% \citemain{cacm}) which gives us a plenty of choice for algorithms to
+% verify in the QIO framework.
+% %%}
+
+\subsubsection*{Research challenges}
+
+The main challenge is to demonstrate that a type theoretic framework
+is capable of efficiently certifying standard and novel quantum
+algorithms and protocols. 
+
+\subsection*{WP3: Certified compilation (PhD project)}
+\label{sec:wp3}
+
+The QIO framework as we have sketched it so far, provides means to
+simulate and reason about quantum computations. However, instead of
+introducing yet another formalism for quantum computation we plan to
+implement translations, i.e. compilers into different existing
+formalisms such as the circuit model, Measurement based, or one-way
+quantum computation \citemain{oneway,meascalc},
+adiabatic quantum computation \citemain{adiabatic} and topological quantum
+computation \citemain{topological}.
+
+Exploiting the expressiveness of our dependently typed implementation
+language we will be able to implement \textbf{certifying} compilers.
+A certifying compiler does not just produce object code but it also
+produces certificates that the object code behaves in the same way as
+the source code (e.g a rather large example is CompCert
+\citemain{compcert-back}). In particular such a compiler can translate verified
+properties of the source code into verified properties of the object
+code. 
+
+Having certifying compilers with different target architectures
+provides a setup in which we can study the different approaches in one
+framework. We can compare their relative efficiency or exploit
+translation to optimise quantum code, e.g. by applying optimisations
+which have been discovered in measurement based quantum computation to
+other approaches \citemain{meascalc,pqc}.
+
+We plan to collaborate with our colleagues who are working on
+measurement based quantum computing: Kashefi in Edinburgh and
+Brown at Imperial college who have the theoretical background and
+would benefit from the additional guarantees and precision provided
+by a formally verified translation in the QIO framework.
+
+The development of a certified compiler for at least one of the
+potential target structures would provide an ideal subject for a PhD
+thesis. 
+
+%  We plan to apply this methodology to quantum algorithms,
+% targeting first quantum circuits and measurement based quantum
+% computing. The QIO framework plays two roles here: first of all we can
+% formalise the compilation process within our framework which will
+% force us to spell out some of the basic but implicit assumptions of
+% Quantum Information Processing in detail. Second, based on this we will be able to
+% enhance our framework by adding certifying compilers targeting
+% different low level formats. Based on feedback with our colleagues we
+% would like to enhance this by taking recent work on realistic physical
+% realisations of Quantum Information Processing into account.
+% %%{\color{red} 
+
+% Researchers working on realising an actual physical implementation of
+% a quantum computer are working with many different ideas. It is not
+% just the implementations that differ, but also the underlying models of
+% quantum computation. The standard circuit model of quantum
+% computation, and Measurement based, or one-way quantum computation
+% \citemain{oneway,meascalc}, are just two of a few models that we would
+% ultimately like to look at. Other models include adiabatic quantum
+% computation \citemain{adiabatic} and topological quantum computation
+% \citemain{topological}. 
+% %%}
+
+\subsubsection*{Research challenges}
+
+The main research challenge here is to represent different realisations
+of quantum computing in one system to be able to relate and compare
+them formally. Another challenge is to formally develop methods
+for compiling quantum programs into an efficient representation.
+
+\subsection*{WP4 : High level structures}
+\label{sec:wp4}
+
+The effective development of quantum algorithms and protocols relies
+on the effective use of high level patterns reflecting an abstract
+view of quantum physics. We have in the past proposed the language QML
+which addresses the issue of control of decoherence in quantum
+algorithms. As a first step we plan to provide a certified
+implementation of QML within the QIO framework. We have also realised
+that another central component of quantum algorithms and protocols is
+the change of base, which in functional programming terms corresponds
+to different, so called \emph{views} of a data structure. Indeed, in a
+conventional setting views were one of the motivating programming
+patterns for dependently typed programming \citemain{vftl}. We plan to
+explore the use of quantum views for the high level development of
+certified quantum algorithms - clearly this aspect is closely linked
+with WP2. 
+
+The group at Oxford lead by Abramsky and Coecke has made substantial
+progress in not only providing a high level account of quantum
+structures using a categorical perspective, namely dagger compact
+closed categories, but they have also exploited this approach to
+develop a graphical calculus which supports and simplifies reasoning
+about quantum systems. We envisage that they could benefit from using
+our framework to formally develop and certify their approach.
+
+Dixon and Duncan are developing a graphical reasoning tool
+(Quantomatic \citemain{quanto}) which is based on the Oxford approach. 
+The interaction
+of these two projects would provide an excellent synergy: Dixon and
+Duncan are developing powerful, interactive reasoning tools which could
+be embedded in our expressive framework. At the same time their
+approach would provide a means to automate developments in the QIO
+framework. 
+
+\subsubsection*{Research challenges}
+
+The main challenge is to represent high level approaches to quantum
+programming within a type theoretic framework. Another challenge is to
+exploit automated and graphical reasoning tools modelling quantum
+systems to generate proofs for an interactive theorem prover. 
+
+\subsection*{WP5: Workshop}
+\label{sec:wp5:-summerschool}
+
+Halfway through the project we plan to organize a workshop on
+\emph{Formal Methods in Quantum Computing}. This will be an
+opportunity to bring together researchers from the interactive theorem
+proving community and from the quantum computing area. Naturally we
+plan also to present preliminary results from our own work and invite
+our collaborators.
+
+% Our interaction during the EPSRC supported QNET framework provided us
+% with valuable contacts to other groups. We would like to maintain and
+% also intensify these contacts during the lifetime of the proposed
+% project. There are a number of interesting interactions: the team of
+% Abramsky and Coecke at Oxford has made substantial
+
+% We do not intend to ignore the work of our colleagues at Oxford who
+% have made substantial progress in not only providing a high level
+% account of quantum structures using a categorical perspective, namely
+% dagger compact closed categories, but who have also exploited this
+% approach to develop a graphical calculus which supports and simplifies
+% reasoning about quantum systems. We believe that they could benefit
+% from using our framework to formally develop and certify their
+% approach. We are looking forward to a a fruitful interaction in this
+% area.
+
+% Our interaction during the EPSRC supported QNET framework provided us
+% with valuable contacts to other groups, in particular we would
+% like to explore links to 
+% %%{\color{red}
+% the graphical calculus by Abramsky and Coecke in Oxford, the
+% measurement calculus by Kashefi (et al.) in Edinburgh, and the work on
+% verifying quantum protocols by Gay, Nagarajan, and Papanikolaou in
+% Glasgow and Warwick \citemain{vqp}.
+% %%}
+
+% \subsection*{WP1: High-level structures in QIO}
+% Many quantum algorithms depend on some sort of \emph{change of basis}
+% that is used to extract the required information from a larger
+% super-position of states. One such example, is the use of the quantum
+% Fourier transform in Shor's period-finding subroutine. These changes of
+% basis equate nicely to the \emph{views} that we have in dependently
+% typed languages such as Agda.  
+
+% \subsection*{WP2: Modelling the field of complex numbers in a
+% dependently-typed setting}
+% One of the main draw backs of the current implementation of QIO is its
+% dependency on an underlying implementation of floating point
+% numbers. As such, it is impossible to prove certain properties of the
+% complex numbers that are necessary for giving us a sound bedding on
+% which to build a formally verified language. Although we can currently
+% postulate these facts, namely the properties that define the complex
+% numbers as an algebraically closed field, it leads to a very
+% un-modular way in which to reason about the QIO programs produced. An
+% important goal of this project will be to study in more depth a way of
+% defining the field of complex numbers in a dependently typed setting
+% that gives us easy access to the properties we wish to prove.
+
+% \subsection*{WP3: Compiling QIO}
+% Having QIO embedded in a parent language has been very useful for
+% exploring what can be done. However, one of our goals is to have QIO
+% as a fully independent language. This will help to separate the
+% denotational syntax of QIO programs from any underlying operational
+% semantics, as well as enable QIO programs to be compiled to any
+% underlying model of quantum computation. For example:
+
+% \subsubsection*{Measurement patterns}
+% One way quantum computation \citemain{oneway} differs from the standard
+% model of quantum computation by making use of a large entangled state
+% or \emph{graph state} as a resource. Computations are achieved by
+% measuring the qubits in a graph state in a certain order, whereby the
+% basis in which a measurement is made can depend on previous
+% measurements. The Measurement calculus \citemain{meascalc} has been
+% proposed as a way of defining the \emph{measurement patterns} that are
+% necessary to propagate a specific computation. We plan to have these
+% measurement patterns as one of the possible semantics for a compiled
+% QIO computation.
+
+% \subsubsection*{Quantum circuits}
+% By far the most common model of quantum computation in use currently,
+% is that of quantum circuits. We plan to define a universal set of typed
+% circuits that can be used as one of the possible semantics for a
+% compiled QIO computation.
+
+% \subsection*{Simulation}
+% As well as being able to compile QIO programs it is nice to be able to
+% test running them. For this purpose, we would have an operational
+% semantics that equates to the simulation of a quantum computation on a
+% classical system. One advantage of this process is being able to
+% simulate a probability distribution of all possible results from
+% running the computation.
+
+% \subsection*{WP4: Formally verified quantum algorithms}
+% Having QIO as a fully fledged formally verified quantum programming
+% language will enable us to develop quantum algorithms using it. As
+% well as the underlying structure of QIO programs being formally
+% verified, we would like to use the dependent type system to
+% verify the algorithms written using QIO. For example, an
+% implementation of Deutsch's algorithm \citemain{1992-deutsch} could be 1. To demonstrate that a type theoretic framework is capable of
+efficiently certifying standard and novel quantum algorithms and
+protocols.
+2.  To develop a framework for certified quantum information
+processing which is useful for researchers in the field of quantum
+computing who are not specialists in Type Theory.  
+3. The integration of concurrency and quantum information
+processing in a type theoretic framework.
+4. Represent different realisations of quantum computing in one system
+to be able to relate and compare them formally.
+5. To formally develop methods for compiling quantum programs into an
+efficient representation.
+6. To represent high level approaches to quantum programming within a
+type theoretic framework.
+7. To exploit automated and graphical reasoning tools modelling
+quantum systems to generate proofs for an interactive theorem prover.
+% verified to give a solution to the problem of whether the input
+% function is constant or balanced. This form of verified code is likely
+% to be a major asset, as quantum machines, as a resource, will be...
+
+% \subsection*{WP5: Types for quantum computation}
+% In order to develop QIO as an independent programming language, it is
+% necessary to look at both the classical types and quantum types that
+% it will use. Quantum data types can, in general, be defined in terms of
+% operations on classical structures over quantum bits, or qubits. For
+% example, a pair of qubits is sufficient to model the Bell states, or a
+% list of qubits can be used to represent a form of quantum integer. It
+% is therefore an important question to ask which classical structures
+% and types we would like in QIO. This question also includes the
+% dependent types that are required in order to give our unitary
+% operations a formal verification.
+
+% \subsection*{WP6: Quantum protocols and QIO}
+% \subsubsection*{Quantum Error Correction}
+% The Quantum IO Monad gives us an idealised model of quantum
+% computation, where decoherence can only occur explicitly in
+% measurement operations. It is likely that any \emph{real} quantum
+% system will have to deal with decoherence from other sources, such as
+% interaction with the environment. As such, there is much work on
+% quantum error correction methods, for dealing with unwanted
+% decoherence within a quantum system. We would like to be able to use
+% QIO to look at these protocols, including a version of QIO that is
+% able to model these other forms of unwanted decoherence.
+
+% \subsubsection*{Quantum Cryptography}
+% Quantum crytpography is one of the fastest growing areas of study in
+% quantum computation. There are already provably secure quantum
+% protocols such as BB84 \citemain{BEN84}, which are in use
+% commercially over fibre-optic networks. We would like to use QIO to
+% model and study these protocols.
+
+% \subsection*{PhD project}
+% The PhD student will primarily work on work packet 6.
+
+\section{Relevance to Beneficiaries}
+
+Our primary beneficiaries are other researchers working in quantum
+computing. The QIO framework we are developing will provide a tool
+they can use to formally develop and certify their contributions in
+different areas: the development of new quantum algorithms, the
+development of physically realistic approaches or the development of
+high level approaches to Quantum Information Processing. We also
+envisage useful interactions with physicists, exploiting our existing
+contacts to the quantum groups at Nottingham and Imperial college.
+
+We have already exploited the Haskell QIO monad to teach quantum
+computing at Nottingham. The QIO framework we would be developing in
+this project would provide further opportunities to educate students
+and the interested public in quantum information processing. This is
+especially important, since prototypes are limited and hard to
+construct. 
+
+It is generally believed that the development of a universal quantum
+computer is at least five, if not ten, years away. In this respect the
+benefits of our project are rather long term. On the other hand the
+use of quantum based systems for unconditionally safe key
+distribution, a corner stone for safe communication protocols, is
+already the subject of startup companies \citemain{qci}. 
+In this area our framework could provide commercially
+relevant certificates within the lifetime of our project.
+
+\section{Dissemination and Exploitation}
+
+The field of quantum computation is a highly interdisciplinary
+subject, with much work in both Computer Science, and Physics
+departments. As we have already indicated our work relies very much on
+the interaction and the input from our colleagues. Hence we plan to
+integrate extended exchanges with 
+%%{\color{red}
+some of the groups that were also
+members of QNET, e.g. Oxford, Edinburgh, Glasgow and Warwick,
+%%}
+to transfer information both
+ways. 
+
+Additionally we will use the traditional way of disseminating
+research results, with workshop and conference papers and journal
+publication. There are many workshops and conferences to which we
+could submit our research, some specific to quantum computation
+include QPL, QICS workshops, the Reversible
+Computing workshop, QUOXIC meetings, Categories, Logic and Foundations
+of Physics workshops. We plan to publish draft papers on arXiv.org
+and publish journal papers in computer science journals such as
+TCS, JFP etc. 
+
+We have already successfully used the Haskell QIO monad to teach
+quantum computing to undergraduates. We plan to develop this further,
+providing course material based on our framework both on the
+undergraduate and graduate level (for the latter we plan to offer a
+course as part of the Midland Graduate School).
+
+The workshop on \emph{Formal Methods in Quantum Computing} will 
+concentrate on topics related to the formal development of quantum
+software, and will also be used to disseminate our results. 
+
+Since the QIO framework is a central component of the project, we plan
+to make the software available on an open source licence.  We also
+plan to support and interact with the interested public via wikis and
+shared software repositories.
+
+{\small 
+\bibliographystylemain{abbrv}
+\bibliographymain{proposal} 
+}
+
+% {\small
+% \bibliographystyle{abbrv}
+% \bibliography{proposal} 
+% }
+\end{document}

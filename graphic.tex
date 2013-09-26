@@ -1,0 +1,128 @@
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{pstcol}
+\usepackage{pst-text}
+
+\input{braket}
+\input{prelude.tex}
+
+
+\title{Quantum Information Processing Meets Type Theory:\\
+ \Large A Proposal for a Framework for Certified Quantum Information Processing\\
+\LARGE (Case for Support)}
+\author{Thorsten Altenkirch and Alexander S. Green}
+\date{}
+
+\begin{document}
+
+\twocolumn[\maketitle
+\section*{Summary}
+Quantum Information Processing is an emerging technology 
+\vspace{2em}]
+
+\section*{Graphics}
+
+\subsection*{QIO framework}
+
+This graphic is to demonstrate the relationship between
+the various parts that make up the QIO framework\\
+\begin{pspicture}(-1,-1)(7,10)
+
+\rput(1.6,6.1){\psline[linewidth=2pt]{<->}(0.7,1.6)}
+\pstextpath{
+\rput(1.3,6.3){\psline[linewidth=1pt,linecolor=white]{-}(0.84,1.92)}
+}{
+Reasoning
+}
+
+\rput(3.7,7.7){\psline[linewidth=2pt]{<->}(0.7,-1.6)}
+\pstextpath{
+\rput(4,8){\psline[linewidth=1pt,linecolor=white]{-}(0.84,-1.92)}
+}{
+Programming
+}
+
+\rput(1.6,2.9){\psline[linewidth=2pt]{<->}(0.7,-1.6)}
+\pstextpath{
+\rput(1.3,2.8){\psline[linewidth=1pt,linecolor=white]{-}(0.84,-1.92)}
+}{
+Simulation
+}
+
+\rput(3.7,1.3){\psline[linewidth=2pt]{<->}(0.7,1.6)}
+\pstextpath{
+\rput(4,1.1){\psline[linewidth=1pt,linecolor=white]{-}(0.84,1.92)}
+}{
+Compilation
+}
+
+\pscircle[linecolor=black,fillcolor=cyan,fillstyle=solid](3,8.5){1}
+\rput(3,8.5){\psscaleboxto(1.3,0){User}}
+
+\psframe[linecolor=black,fillcolor=cyan,fillstyle=solid](1,3)(5,6)
+\rput(3,4.9){\psscaleboxto(2,0){QIO}}
+\rput(3,4.1){\psscaleboxto(3,0){framework}}
+
+\pscircle[linecolor=black,fillcolor=cyan,fillstyle=solid](3,0.5){1}
+\rput(3,0.8){\psscaleboxto(1.2,0){Hardware}}
+\rput(3,0.5){\psscaleboxto(0.2,0){or}}
+\rput(3,0.2){\psscaleboxto(1.7,0){Physical Model}}
+
+
+\end{pspicture}
+
+
+\subsection*{QIO structure}
+
+This graphics demonstrates the structures used in the Quantum IO Monad.
+
+\begin{pspicture}(-1,-1)(7,7)
+
+\psframe[framearc=0.3](0.1,0)(2.6,2.5)
+\rput(1.35,2.0){\psscaleboxto(2.2,0){U Monoid}}
+\rput(1.35,1.2){\psscaleboxto(2,0){reversible}}
+\rput(1.35,0.4){\psscaleboxto(2,0){deterministic}}
+
+\rput(1.35,3.3){\psline[linewidth=2pt]{->}(0,-0.8)}
+\pstextpath{
+\rput(1.75,3.4){\psline[linewidth=1pt,linearc=0.8,linecolor=white]{->}(0,-0.9)}
+}{
+apply
+}
+
+\psframe[framearc=0.3](0,3.3)(2.7,6)
+\rput(1.35,5.55){\psscaleboxto(2.4,0){QIO Monad}}
+\rput(1.35,4.65){\psscaleboxto(2,0){irreversible}}
+\rput(1.35,3.75){\psscaleboxto(2,0){probabilistic}}
+
+\psline[linewidth=2pt,linearc=0.8]{->}(2.7,4.3)(3.5,4.6)(4.5,4.25)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{->}(2.7,4.6)(3.5,4.9)(4.5,4.55)
+}{
+Initialisation
+}
+
+\psline[linewidth=2pt,linearc=0.8]{<-}(2.1,3.3)(3.1,2.9)(4,3.6)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{-}(2.1,3.0)(3.1,2.7)(4,3.3)
+}{
+Measurement
+}
+
+
+\psline[linewidth=2pt]{<->}(2.6,1.6)(4,2.5)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{-}(2.7,1.3)(4.1,2.2)
+}{
+Modifies
+}
+
+
+\psframe[shadow=true,shadowsize=8pt](4,1.75)(6,4.25)
+\rput(5,3.5){\psscaleboxto(1.2,0){Qubit}}
+\rput(5,2.5){\psscaleboxto(1.2,0){Store}}
+
+\end{pspicture}
+
+\end{document}

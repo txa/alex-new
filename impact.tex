@@ -1,0 +1,110 @@
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\input{prelude.tex}
+
+\title{Quantum Computing Meets Type Theory:\\
+ \Large A Proposal for a Framework for Certified Quantum Information Processing
+% \\ \LARGE (Pathways to impact)
+}
+\author{(Pathways to impact) --- Thorsten Altenkirch and Alexander S. Green}
+\date{}
+
+\begin{document}
+
+%\twocolumn[\maketitle]{
+
+\maketitle
+
+Quantum computing is an emerging technology which has a potentially
+immeasurable impact on our computational resources and hence on the
+economy as a whole. Quantum computers may lead to an unprecedented
+speedup to solve algorithmic problems while quantum protocols may
+impact drastically on the efficiency, safety and secrecy of
+information protocols.
+
+On the other hand there is the emerging area of interactive formal
+development based on Type Theory: here we are concerned with the development
+of novel high level programming languages which can provide machine
+checkable certificates that a program does what it says. Impressive
+achievements include the verification of a C-compiler \cite{compcert-back}, 
+of an operating
+systems kernel \cite{seL4_CACM_10} and the proof of a famously hard mathematical problem
+(the 4 colour theorem) \cite{gonthier:four-colour-paper}.
+
+We believe that there is an exciting potential impact arising from the
+interaction of these two areas. We give some examples:
+
+\subsection*{Verifiability of claims in Quantum Information Processing}
+\label{sec:do-you-realy}
+
+Our project addresses the reliability and
+trustworthiness of quantum computation - this is even more relevant in
+a novel area where the public, business people, journalists and
+politicians cannot rely on previous experiences with a certain
+technology. As an example, one may consider a number of highly
+disputed claims in this area such as D-Wave's adiabatic system
+\cite{dwave}. Hence we estimate that our research, in conjunction with
+Kashefi's work on blind quantum computation \cite{blind}, 
+could contribute to the ability to certify promises made by companies
+providing quantum computing resources.
+
+\subsection*{Secure quantum communication}
+\label{sec:secure-quant-comm}
+
+Another area is secure communication, an area which becomes
+increasingly more important now that many essential transactions are
+handled via digital networks. The emerging technology of securing
+communication channels using quantum resources hence has a clear
+economic impact \cite{qci}. Indeed, there are many
+new protocols being developed but only very few are verified. We need
+to avoid the expensive mistakes of the past (i.e. the proliferation of
+computer viruses and phishing emails, identity theft and hackers
+breaking into bank networks and even stealing pins from ATMs).
+Developing a certifiable quantum technology for safe communication
+would be even more essential once quantum computers become available
+since using them, hackers could break most of the classical
+cryptographic protocols that we currently rely upon.
+
+\subsection*{Quantum software engineering}
+\label{sec:quant-softw-engin}
+
+Our framework provides the opportunity to perform experiments with
+quantum computing resources which are currently hard or expensive to
+construct. It also provides an alternative to quantum simulators, which
+suffer from the problem that quantum systems are computationally hard
+to simulate on a classical computer. We also hope that our framework
+will contribute to more structured and effective ways of constructing
+quantum software. 
+
+\subsection*{Teaching Quantum Information Processing}
+\label{sec:teaching-qip}
+
+We have already exploited the Haskell QIO monad to teach quantum
+computing at Nottingham. This worked very well in conjunction with a
+new, excellent textbook in the area \cite{Mermin}. We found that using
+the QIO software clearly enhanced the student's understanding and gave
+them the opportunity to develop skills instead of merely textbook
+knowledge. The QIO framework we would be developing in
+this project would provide further opportunities to educate students
+and the interested public in quantum information processing. 
+
+\subsection*{Quantum Information Processing: a killer app for Type Theory ?}
+\label{sec:qip-killer-app}
+
+It is frequently the case that new methods (here Type Theory) find it
+difficult to replace existing technology (here conventional software
+engineering) in conventional areas. This is due to the fact that
+initially the new methods are not as effective as the already
+established ones, even though they may offer benefits in the long
+run. Hence, new methods may have a better chance to be adopted in a
+novel application area and can spread from there to other, conventional
+engineering problems. In this sense, quantum computing may provide the
+killer application for type-theoretic software engineering.
+
+\newpage
+\bibliographystyle{abbrv}
+\bibliography{proposal} 
+
+
+\end{document}

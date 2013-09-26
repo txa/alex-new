@@ -1,0 +1,48 @@
+Quantum Information Processing is an emerging technology with an
+enormous potential: while hypothetical quantum computers can solve
+certain computational problems exponentially faster than conventional
+computers, cryptographic protocols based on quantum keys are already
+used to provide a previously unknown level of security. Researchers in
+computer science and related disciplines are facing the challenge of
+developing quantum algorithms and protocols and providing evidence
+that their quantum software performs as specified. With the Quantum IO
+(QIO) monad we have presented a framework for the development of
+quantum software within the functional programming language
+Haskell. Functional Programming is ideally suited to meet the
+challenge of quantum computing due to its ability to model
+non-standard effects. However, some aspects of Quantum Information
+Processing, in particular preservation of reversibility, cannot be
+modelled satisfactorily within Haskell's conventional type system. In
+his PhD work, Green shows that this issue can be addressed by moving
+to a more expressive type system, i.e. the dependently typed
+programming language Agda.
+
+This is only the first glimpse of the role dependent types could play
+for Quantum Information Processing - there is much more to come!
+Quantum information processing is a complex topic and needs expressive
+notations for us to use it. Dependent types give rise to very
+expressive languages, which are extremely useful for specifying and
+certifying systems exactly.  This makes them ideally suited to helping
+us to tackle the problem of specifying and implementing devices for
+quantum information processing.
+
+We propose to explore and validate this claim by developing a
+framework for formally certified Quantum Information Processing within
+a dependently typed programming system. Within this framework we plan
+to certify existing and emerging quantum algorithms and protocols and
+provide certified compilers to low level, physically plausible
+realisations of quantum computing such as measurement based quantum
+computing. The formal verification of quantum protocols is especially
+relevant since applications of this technology are becoming
+commercially available.
+
+We will utilise this framework to develop and certify high level
+approaches to Quantum Information Processing such as Abramsky's,
+Coecke's and Selinger's graphical calculi.  We envisage that our
+framework will provide the language and software tools for other
+researchers to use in their work on high level approaches to Quantum
+Information Processing. Indeed, our proposal naturally complements the
+development of more specific calculi for Quantum Information
+Processing, which focus on automatisation while our strength is
+expressivity.
+

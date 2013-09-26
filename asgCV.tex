@@ -1,0 +1,106 @@
+\documentclass[line]{res}
+\usepackage{hyperref}
+\hypersetup{colorlinks,urlcolor=blue}
+
+\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0.045in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in}
+      \setlength{\leftmargin}{0.2in}}}{\end{list}}
+
+\begin{document}
+
+\name{Dr. Alexander S. Green}
+
+\begin{resume}
+
+\section{\sc Contact Details}
+\begin{ncolumn}{2}
+2A Abbey Road,  & \\
+Beeston,        & {\it Phone:}  +44 (0)1159 229164\\
+Nottingham,     & {\it Mobile:} +44 (0)7743 855930\\
+NG9 2QF,        & {\it Email:} \texttt{alexander.s.green@gmail.com}\\
+UK              & \\
+\end{ncolumn}
+
+\vspace{-3mm}
+\section{\sc Education}
+\begin{format}
+\title{l}\employer{r}\\
+\dates{l}\location{r}\\
+\body\\
+\end{format}
+
+\employer{University of Nottingham, UK} \location{}
+\title{\bf{PhD in Computer Science}}
+\dates{September 2005 - July 2010}
+\begin{position}
+Thesis title: 
+{\em Towards a formally verified functional quantum programming language}\\
+Thesis online at \url{http://www.cs.nott.ac.uk/~asg/pdfs/thesis.pdf}\\
+\vspace{-4mm}
+
+\begin{list2}
+\item My PhD studies focussed on developing the Quantum IO Monad, a monadic interface to quantum computation. 
+\item I also studied advanced functional programming techniques, type theory, including dependent types, and category theory.
+\item I have published a peer-reviewed paper as well as a chapter in the book \emph{Semantic Techniques in Quantum Computation}. 
+\item I have presented my work at international conferences.
+\end{list2}
+\end{position}
+
+\title{\bf{BSc (Hons) Upper Second Class in Computer Science}}
+\dates{September 2001 - July 2005}
+\begin{position}
+\vspace{-4mm}
+\begin{list2}
+\item Obtained high marks in modules involving mathematics, functional programming, and formal verification.
+\end{list2}
+\end{position}
+
+\vspace{-3mm}
+\section{\sc Skills and Experience}
+
+\begin{list2}
+\item Presenting my own work to both specialist and general computer science audiences.
+\item Lecturing to computer science undergraduate and masters students on quantum computation.
+\item Extensive programming expericence with the functional programming language Haskell.
+\item Programming with the dependently typed programming language Agda.
+\item Programming with many popular programming languages including Java, C++, and PHP.
+\item Document preparation using office suites and LaTeX.
+\end{list2}
+
+\vspace{-3mm}
+\section{\sc Positions of Responsibility}
+\begin{list2}
+\item Lecturing to computer science undergraduate and masters students on quantum computation.
+\item Leading labs and tutorials for undergraduate courses on computer systems architecture, and mathematics for computer scientists.
+\end{list2}
+
+\vspace{-3mm}
+\section{\sc Publications}
+\begin{list2}
+\item From Reversible to Irreversible Computations 
+\emph{Alexander S. Green and Thorsten Altenkirch}
+Electronic Notes in Theoretical Computer Science, Volume 210, July 2008
+\emph{Proceedings of the 4th International Workshop on Quantum Programming Languages (QPL 2006)}
+\url{http://www.cs.nott.ac.uk/~asg/pdfs/qpl06.pdf}
+
+\item The Quantum IO Monad
+\emph{Thorsten Altenkirch and Alexander S. Green}
+Semantic Techniques in Quantum Computation 
+\emph{edited by Simon Gay and Ian Mackie}
+Cambridge University Press, 2010
+\emph{ISBN-13: 9780521513746}
+\url{http://www.cs.nott.ac.uk/~asg/pdfs/chapter.pdf}
+
+\end{list2}
+
+\end{resume}
+\end{document}

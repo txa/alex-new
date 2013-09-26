@@ -1,0 +1,18 @@
+List the main objectives of the proposed research in order of priority [up to 4000 chars]
+
+1. To demonstrate that a type theoretic framework is capable of
+efficiently certifying standard and novel quantum algorithms and
+protocols.
+2.  To develop a framework for certified quantum information
+processing which is useful for researchers in the field of quantum
+computing who are not specialists in Type Theory.  
+3. The integration of concurrency and quantum information
+processing in a type theoretic framework.
+4. Represent different realisations of quantum computing in one system
+to be able to relate and compare them formally.
+5. To formally develop methods for compiling quantum programs into an
+efficient representation.
+6. To represent high level approaches to quantum programming within a
+type theoretic framework.
+7. To exploit automated and graphical reasoning tools modelling
+quantum systems to generate proofs for an interactive theorem prover.

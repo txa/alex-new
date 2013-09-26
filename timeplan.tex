@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+
+\usepackage{color}
+\usepackage{pst-gantt}
+
+\input{braket}
+\input{prelude.tex}
+
+\title{Quantum Computing Meets Type Theory:\\
+ \Large A Proposal for a Framework for Certified Quantum Information Processing
+% \\ \LARGE (Work Plan)
+}
+\author{(Work Plan) --- Thorsten Altenkirch and Alexander S. Green}
+\date{}
+
+\begin{document}
+\maketitle
+
+The following table shows the four main work packages from the Programme
+and Methodology, plus two extra packages. The fifth package indicates 
+the proposed period in which we'll host a workshop on 
+\emph{Formal Methods in Quantum Computing}.
+The sixth package is for the doctoral student writing up their PhD thesis. 
+The major involvements of each of the participants is indicated.
+\bigskip
+
+\begin{quote}
+\begin{tabular*}{0.5\columnwidth}{r*{6}{|c}|}
+\multicolumn{1}{c}{}&\multicolumn{1}{c}{WP1}&\multicolumn{1}{c}{WP2}&\multicolumn{1}{c}{WP3}&\multicolumn{1}{c}{WP4}&\multicolumn{1}{c}{Workshop}&\multicolumn{1}{c}{Writeup}\\
+\cline{2-7}         &            &            &            &            &            & \\[-0.1cm] 
+Thorsten Altenkirch & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \\[0.1cm] 
+\cline{2-7}         &            &            &            &            &            & \\[-0.1cm] 
+Alexander S. Green  & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark & \\[0.1cm] 
+\cline{2-7}         &            &            &            &            &            & \\[-0.1cm] 
+Doctoral Student    & \checkmark &            & \checkmark &            & \checkmark & \checkmark \\[0.1cm] 
+\cline{2-7} 
+\end{tabular*}
+\end{quote}
+\bigskip
+
+The main part of the project will run for 4 years, including the write
+up time for the doctoral student. The following Gantt chart shows the
+expected duration of each of the work packages, in quarter years from
+the start of the project.
+\bigskip
+
+\newpsstyle{Writeup}{fillstyle=solid,fillcolor=red}
+
+\begin{PstGanttChart}[yunit=2, TaskOutsideLabelMaxSize=1, ChartUnitIntervalName=Q, ChartUnitBasicIntervalName=Q, TaskUnitIntervalValue=9, TaskUnitType=Q, ChartShowIntervals]{6}{16}
+
+ \PstGanttTask[TaskOutsideLabel={WP1}]{0}{8}
+ \PstGanttTask[TaskOutsideLabel={WP2}]{4}{12}
+ \PstGanttTask[TaskOutsideLabel={WP3}]{4}{10}
+ \PstGanttTask[TaskOutsideLabel={WP4}]{8}{8}
+ \PstGanttTask[TaskOutsideLabel={Workshop}]{7}{1} 
+ \PstGanttTask[TaskStyle=Writeup,TaskOutsideLabel={Writeup}]{14}{2}
+
+\end{PstGanttChart}
+
+\end{document}

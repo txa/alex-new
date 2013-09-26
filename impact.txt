@@ -1,0 +1,24 @@
+Our primary beneficiaries are other researchers working in quantum
+computing. The QIO framework we are developing will provide a tool
+they can use to formally develop and certify their contributions in
+different areas: the development of new quantum algorithms, the
+development of physically realistic approaches or the development of
+high level approaches to Quantum Information Processing. We also
+envisage useful interactions with physicists, exploiting our existing
+contacts to the quantum groups at Nottingham and Imperial college.
+
+We have already exploited the Haskell QIO monad to teach quantum
+computing at Nottingham. The QIO framework we would be developing in
+this project would provide further opportunities to educate students
+and the interested public in quantum information processing. This is
+especially important, since prototypes are limited and hard to
+construct.
+
+It is generally believed that the development of a universal quantum
+computer is at least five, if not ten, years away. In this respect the
+benefits of our project are rather long term. On the other hand the
+use of quantum based systems for unconditionally safe key
+distribution, a corner stone for safe communication protocols, is
+already the subject of startup companies.  In this area our framework
+could provide commercially relevant certificates within the lifetime
+of our project.
