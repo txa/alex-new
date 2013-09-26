@@ -573,8 +573,16 @@ The University of Nottingham.
 \subsection*{Quipper}
 
 \begin{figure}
+\begin{verbatim}
+teleport :: Qubit -> Circ Qubit
+teleport q = do
+    (a,b) <- bell00
+    (x,y) <- alice q a
+    b <- bob b (x,y)
+    return b
+\end{verbatim}
 \includegraphics[width=\columnwidth]{teleport.eps}
-\caption{Example of circuit produced by Quipper}\label{fig:quipper-circ}
+\caption{Example of Quipper code, and the circuit it produces}\label{fig:quipper-circ}
 \end{figure}
 
 Quipper \citetrack{quipper-pldi,quipper-rc} is an embedded, scalable
