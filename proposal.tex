@@ -585,8 +585,25 @@ teleport q = do
 \caption{Example of Quipper code, and the circuit it produces}\label{fig:quipper-circ}
 \end{figure}
 
-Quipper \citetrack{quipper-pldi,quipper-rc} is an embedded, scalable
-functional programming language for quantum computing.
+Quipper \citetrack{quipper-pldi,quipper-rc} is an embedded, scalable,
+higher-order, functional programming language for quantum computing. It
+has been used to program a diverse set of non-trivial quantum
+algorithms, and can generate quantum gate representations using
+trillions of gates. Quipper is geared towards a model of computation
+that uses a classical computer to control a quantum device, but is not
+dependent on any particular model of quantum hardware. Embedded within
+Haskell, Quipper borrows, and builds upon, some of the features that were
+first introduced in QIO, such as extensible quantum data
+types. Quipper also provides many libraries such as quantum integer
+and fixed-point arithmetic; the Quantum Fourier transform; an
+efficient Qram implementation; libraries for simulation of
+pseudo-classical circuits, Stabilizer circuits, and arbitrary
+circuits; and libraries for exact and approximate decomposition of
+circuits into specific gate sets. Quipper is able to produce
+representations of quantum circuits, in various formats, from the
+code. Figure \ref{fig:quipper-circ} gives a snippet of code that
+represents quantum teleportation, along with the EPS figure generated
+by Quipper of the corresponding circuit diagram.
 
 \subsection*{Dependent Types}
 Dependent types are types which refer to (hence depend on)
