@@ -18,7 +18,7 @@
 
 
 \title{Type Theory Meets Quantum Computing:\\
- \Large A Framework for Certified Quantum Information Processing
+ \Large A Framework of Tools for Certified Quantum Information Processing
 % \\
 % \LARGE (Case for Support)
 }
@@ -40,7 +40,9 @@ already used to provide a previously unknown level of security
 computer science and related disciplines are facing the challenge of
 developing quantum algorithms \citemain{cacm} and protocols \textbf{and}
 providing evidence that their quantum software performs as
-specified. With the Quantum IO (QIO) monad
+specified. 
+
+With the Quantum IO (QIO) monad
 \citetrack{txa:qio,asg:thesis}, and more recently with the quantum
 programming language Quipper \citetrack{quipper-pldi,quipper-rc},
 which built upon many of the ideas presented in QIO, the authors have
@@ -368,11 +370,15 @@ over a 36 hour period at 1 Mbit/s.
   such as QPL \citemain{qpl}, inspired by flowcharts, and QML
   \citetrack{txa:qml,jjgthesis} a first order functional quantum
   programming language. This languages offer specific constructs which
-  make it easier to express quatum algorithms on a high level.
-  Quantum process calculi \citemain{upro} have been proposed to capture
-  the nature of concurrent and communicating quantum systems.  Recent
-  surveys on the state of the art for quantum programming languages
-  can also be found \citemain{RudigerSurvey,GaySurvey}.
+  make it easier to express quatum algorithms on a high
+  level. Recently, Quipper \citetrack{quipper-pldi,quipper-rc} has
+  been released as a scalable quantum programming language, capable of
+  implementing large quantum algorithms producing circuits with over
+  30 trillion gates. Quantum process calculi \citemain{upro} have been
+  proposed to capture the nature of concurrent and communicating
+  quantum systems.  Recent surveys on the state of the art for quantum
+  programming languages can also be found
+  \citemain{RudigerSurvey,GaySurvey}.
 %%} 
 \item
 Researchers are trying 
@@ -557,6 +563,63 @@ implementation of QIO is available through Hackage,
 and has been used in third year undergraduate level and masters level
 courses on quantum computation in the School of Computer Science, at
 The University of Nottingham.
+
+\subsection*{Quipper}
+
+\begin{figure}
+\begin{pspicture}(-1,-1)(7,7)
+
+\psframe[framearc=0.3](0.1,0)(2.6,2.5)
+\rput(1.35,2.0){\psscaleboxto(2.2,0){U Monoid}}
+\rput(1.35,1.2){\psscaleboxto(2,0){reversible}}
+\rput(1.35,0.4){\psscaleboxto(2,0){deterministic}}
+
+\rput(1.35,3.3){\psline[linewidth=2pt]{->}(0,-0.8)}
+\pstextpath{
+\rput(1.65,3.3){\psline[linewidth=1pt,linearc=0.8,linecolor=white]{->}(0,-0.8)}
+}{
+Run
+}
+
+\psframe[framearc=0.3](0,3.3)(2.7,6)
+\rput(1.35,5.55){\psscaleboxto(2.4,0){QIO Monad}}
+\rput(1.35,4.65){\psscaleboxto(2,0){irreversible}}
+\rput(1.35,3.75){\psscaleboxto(2,0){probabilistic}}
+
+\psline[linewidth=2pt,linearc=0.8]{->}(2.7,4.3)(3.5,4.6)(4.5,4.25)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{->}(2.7,4.6)(3.5,4.9)(4.5,4.55)
+}{
+Initialisation
+}
+
+\psline[linewidth=2pt,linearc=0.8]{<-}(2.1,3.3)(3.1,2.9)(4,3.6)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{-}(2.1,3.0)(3.1,2.7)(4,3.3)
+}{
+Measurement
+}
+
+
+\psline[linewidth=2pt]{<->}(2.6,1.6)(4,2.5)
+\pstextpath{
+\psline[linewidth=1pt,linearc=0.8,linecolor=white]{-}(2.7,1.3)(4.1,2.2)
+}{
+Modifies
+}
+
+
+\psframe[shadow=true,shadowsize=8pt](4,1.75)(6,4.25)
+\rput(5,3.5){\psscaleboxto(1.2,0){Qubit}}
+\rput(5,2.5){\psscaleboxto(1.2,0){Store}}
+
+\end{pspicture}
+\caption{Example of circuit produced by Quipper}\label{fig:quipper-circ}
+\end{figure}
+
+Quipper \citetrack{quipper-pldi,quipper-rc} is 
+
+
 
 \subsection*{Dependent Types}
 Dependent types are types which refer to (hence depend on)
