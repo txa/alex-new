@@ -43,14 +43,11 @@ already used to provide a previously unknown level of security
 computer science and related disciplines are facing the challenge of
 developing quantum algorithms \citemain{cacm} and protocols \textbf{and}
 providing evidence that their quantum software performs as
-specified. 
-
-With the Quantum IO (QIO) monad
-\citetrack{txa:qio,asg:thesis}, and more recently with the quantum
-programming language Quipper \citetrack{quipper-pldi,quipper-rc},
-which built upon many of the ideas presented in QIO, the authors have
-presented a framework for the development of quantum software within
-the functional programming language Haskell.
+specified. With the Quantum IO (QIO) monad
+\citetrack{txa:qio,asg:thesis}, and more recently with Quipper
+\citetrack{quipper-pldi,quipper-rc}, the authors have
+presented two related frameworks for the development of
+quantum software within the functional programming language Haskell.
 \txa{Talk about Quipper}
  Functional
 Programming is ideally suited to meet the challenge of quantum
@@ -70,17 +67,7 @@ languages, which are extremely useful for specifying and certifying systems exac
 %{\color{red}evidence?}. 
 This makes them ideally suited to helping us to tackle the
 problem of specifying and implementing devices for quantum information
-processing. 
-
-% This is the core of Alexander S. Green's PhD
-% work \citemain{asg:thesis} in which he also addresses some key issues with
-% this approach which are related to the fact that Haskell's type system
-% is too weak to specify the invariants of reversible quantum
-% computations. He also suggests a way to address this problem by moving
-% to a stronger type system as realised within the dependently typed
-% functional programming language Agda \citetrack{agda}. 
-
-We propose to explore and validate this claim by developing a
+processing. We propose to explore and validate this claim by developing a
 framework for formally certified Quantum Information Processing within a
 dependently typed programming system. Within this framework we plan to
 certify existing and emerging quantum algorithms and protocols \textbf{and}
