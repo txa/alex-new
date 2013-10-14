@@ -1,18 +1,17 @@
 \documentclass[a4paper]{article}
 
+% upto two sides of A4
+
 \usepackage{color}
 \input{prelude.tex}
 
-\title{Quantum Computing Meets Type Theory:\\
- \Large A Proposal for a Framework for Certified Quantum Information Processing
-% \\ \LARGE (Pathways to impact)
+\title{Quantum Types for Quantum Programs:\\
+ \Large Towards a Framework for Certified Quantum Information Processing
 }
 \author{(Pathways to impact) --- Thorsten Altenkirch and Alexander S. Green}
 \date{}
 
 \begin{document}
-
-%\twocolumn[\maketitle]{
 
 \maketitle
 
@@ -21,16 +20,32 @@ immeasurable impact on our computational resources and hence on the
 economy as a whole. Quantum computers may lead to an unprecedented
 speedup to solve algorithmic problems while quantum protocols may
 impact drastically on the efficiency, safety and secrecy of
-information protocols.
+information protocols. In general, Quantum computation is of interest
+to many types of organisation, from financial institutions who rely on
+secure communications, and chemical and drug manufactures who need to
+simulate complex molecules at the quantum mechanical level, to
+governments and intelligence agencies, such as IARPA who recently ran
+the QCS project \cite{QCS}. In particular, Quantum Programming
+Languages allow for the formalisation of abstract quantum algorithms,
+as well as calculating the size of quantum resources that would be
+required to run these algorithms (see \cite{quipper-ns}, a New
+Scientist article giving an overview of how Quipper has been implemented
+for these tasks).
 
 On the other hand there is the emerging area of interactive formal
-development based on Type Theory: here we are concerned with the development
-of novel high level programming languages which can provide machine
-checkable certificates that a program does what it says. Impressive
-achievements include the verification of a C-compiler \cite{compcert-back}, 
-of an operating
-systems kernel \cite{seL4_CACM_10} and the proof of a famously hard mathematical problem
-(the 4 colour theorem) \cite{gonthier:four-colour-paper}.
+development based on Type Theory: here we are concerned with the
+development of novel high level programming languages which can
+provide machine checkable certificates that a program does what it
+says. Impressive achievements include the verification of a C-compiler
+\cite{compcert-back},  of an operating systems kernel
+\cite{seL4_CACM_10} and the proof of a famously hard mathematical
+problem (the 4 colour theorem)
+\cite{gonthier:four-colour-paper}. Companies are also using these
+techniques based on Dependent Type Theory to produce embedded and
+safety-critical software for customers, such as Functor AB
+(\texttt{http://www.functor.se/}) who have a partnership with the CCFE
+and the JET fusion reactor, where the software is used in real-time
+systems that deal with the stabilization of the reactor's plasma.
 
 We believe that there is an exciting potential impact arising from the
 interaction of these two areas. We give some examples:
@@ -42,12 +57,15 @@ Our project addresses the reliability and
 trustworthiness of quantum computation - this is even more relevant in
 a novel area where the public, business people, journalists and
 politicians cannot rely on previous experiences with a certain
-technology. As an example, one may consider a number of highly
+technology. 
+
+As an example, one may consider a number of highly
 disputed claims in this area such as D-Wave's adiabatic system
 \cite{dwave}. Hence we estimate that our research, in conjunction with
-Kashefi's work on blind quantum computation \cite{blind}, 
+Kashefi's work on blind quantum computation \cite{blind,blind2}, 
 could contribute to the ability to certify promises made by companies
 providing quantum computing resources.
+
 
 \subsection*{Secure quantum communication}
 \label{sec:secure-quant-comm}
@@ -61,6 +79,7 @@ new protocols being developed but only very few are verified. We need
 to avoid the expensive mistakes of the past (i.e. the proliferation of
 computer viruses and phishing emails, identity theft and hackers
 breaking into bank networks and even stealing pins from ATMs).
+
 Developing a certifiable quantum technology for safe communication
 would be even more essential once quantum computers become available
 since using them, hackers could break most of the classical
@@ -76,6 +95,17 @@ suffer from the problem that quantum systems are computationally hard
 to simulate on a classical computer. We also hope that our framework
 will contribute to more structured and effective ways of constructing
 quantum software. 
+
+It is already the case that formalizing an algorithm within a
+programming language can help find errors in the algorithm
+specification, and this extends  naturallyto the quantum realm. For
+example, the programming language Quipper was used to implement the
+Ground State Estimation algorithm \cite{GSE}, and this process lead to
+the discovery of a couple of errors in the circuits presented in the
+paper. Our framework would go further, as using a stronger type
+system to derive formal proofs of software correctness allows even
+more scope for detecting (and fixing) errors in an algorithm's
+specification.
 
 \subsection*{Teaching Quantum Information Processing}
 \label{sec:teaching-qip}
@@ -102,9 +132,7 @@ novel application area and can spread from there to other, conventional
 engineering problems. In this sense, quantum computing may provide the
 killer application for type-theoretic software engineering.
 
-\newpage
 \bibliographystyle{abbrv}
 \bibliography{proposal} 
-
 
 \end{document}
