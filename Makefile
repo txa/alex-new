@@ -43,6 +43,7 @@ tidy :
 	rm -f justification.aux justification.log 
 	rm -f main.aux main.bbl main.blg
 	rm -f proposal.aux proposal.dvi proposal.log proposal.ps
+	rm -f proposal.bbl proposal.blg
 	rm -f timeplan.aux timeplan.dvi timeplan.log timeplan.ps
 	rm -f track.aux track.bbl track.blg
 
