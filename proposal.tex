@@ -300,8 +300,8 @@ is the work by Abramsky, Coecke and Selinger \citemain{ac1,seldccc},
 which exploit
 categorical models of quantum systems, i.e. dagger compact closed
 categories \citemain{seldccc}, to develop a graphical calculus for reasoning about
-quantum systems \citemain{kgqm}. Extensions of this calculus have already
-been used to verify some basic quantum protocols \citemain{perdrix}.
+quantum systems \citemain{kgqm}. Extensions of this calculus have been
+used to verify some basic quantum protocols \citemain{perdrix}. 
 \end{itemize}
 
 \subsection*{Functional Programming}
@@ -699,14 +699,24 @@ algorithms. I.e. instead of first writing an algorithm and then
 verifying it, we aim at an integrated process where algorithm and
 verification are developed in tandem.
 
-Having honed our skills on well established quantum algorithms we
-intend to use our framework to verify a more recent algorithm or
-protocol whose correctness may not yet be accepted by the community ,
-e.g.  examples can be found in \citemain{cacm} ---
-thus proving the usefulness of our approach for cutting edge research
-in quantum algorithms. This will also provide a test-case for
-dependently typed programming which has shown its usefulness in a
-conventional setting \citemain{gonthier:four-colour-paper}.
+As part of the IARPA QCS project, Quipper was used to implement 7
+quantum algorithms. The original Haskell implementation of QIO is
+actually a subset of Quipper, with a direct translation available from
+QIO programs to Quipper programs. It is envisaged that the QIO
+framework will have a similar relationship to Quipper, such that we
+can provide a translation of some of the 7 Quipper algorithm
+implementations into the QIO framework. This will in turn give us a
+formal verification of the algorithm implementations. 
+
+Having honed our skills on well established, or previously
+implemented, quantum algorithms we intend to use our framework to
+verify a more recent algorithm or protocol whose correctness may not
+yet be accepted by the community, e.g.  examples can be found in
+\citemain{cacm} --- thus proving the usefulness of our approach for
+cutting edge research in quantum algorithms. This will also provide a
+test-case for dependently typed programming which has shown its
+usefulness in a conventional setting
+\citemain{gonthier:four-colour-paper}.
 
 In traditional protocol verification, formal methods have proved to be
 of great help in the design and  consolidation of protocols. This has
