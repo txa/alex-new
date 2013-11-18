@@ -61,7 +61,7 @@ technology.
 
 As an example, one may consider a number of highly
 disputed claims in this area such as D-Wave's adiabatic system
-\cite{dwave}. Hence we estimate that our research, in conjunction with
+\cite{dwave,Warren2013}. Hence we estimate that our research, in conjunction with
 Kashefi's work on blind quantum computation \cite{blind,blind2}, 
 could contribute to the ability to certify promises made by companies
 providing quantum computing resources.
@@ -79,6 +79,13 @@ new protocols being developed but only very few are verified. We need
 to avoid the expensive mistakes of the past (i.e. the proliferation of
 computer viruses and phishing emails, identity theft and hackers
 breaking into bank networks and even stealing pins from ATMs).
+
+Recent events have shown that even standardised protocols that have
+been thought of as secure may actually contain backdoors hidden within
+their implementations. Having formally verified implementations of
+protocols would prevent this from occuring
+\cite{hales2013}. Developing formally verified implementations of
+quantum protocols is a natural extension of this situation.
 
 Developing a certifiable quantum technology for safe communication
 would be even more essential once quantum computers become available
@@ -98,7 +105,7 @@ quantum software.
 
 It is already the case that formalizing an algorithm within a
 programming language can help find errors in the algorithm
-specification, and this extends  naturallyto the quantum realm. For
+specification, and this extends naturally to the quantum realm. For
 example, the programming language Quipper was used to implement the
 Ground State Estimation algorithm \cite{GSE}, and this process lead to
 the discovery of a couple of errors in the circuits presented in the
